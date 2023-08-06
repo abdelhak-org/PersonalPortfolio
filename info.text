@@ -1,0 +1,60 @@
+    <div className=" max-w-[1534px] h-fit   py-24 flex  mx-auto  justify-center items-center bg-slate-900 "
+      >
+     <Card
+         keyId ="2"
+         y="0px"
+         x="0px"
+         opacity={0}
+         animatedY = "0px"
+         animatedX ="200px"
+         animatedOpacity={1}
+         duration="0.8"
+         delay ="0.3"
+         
+     >
+        <Image src={freepicOne} alt="imageSrc"/>
+     </Card>
+     <Card
+         keyId ="2"
+         y="0px"
+         x="0px"
+         opacity="0"
+         animatedY = "180px"
+         animatedX ="90px"
+         animatedOpacity="1"
+         duration="0.8"
+         delay ="0.3"
+     >
+        <h3> freee iMAGES 2</h3>
+       <Image src={freepicTwo} alt="imageSrc"/>
+
+     </Card>
+     <Card
+         keyId ="2"
+         y="0"
+         x="0"
+         opacity="0"
+         animatedY = "0px"
+         animatedX ="10px"
+         animatedOpacity="1"
+         duration="0.8"
+         delay ="0.3"
+     >
+        <Image src={freepicThree} alt="imageSrc"/>
+
+     </Card>
+     <Card
+         keyId ="2"
+         y="0px"
+         x="0px"
+         opacity="0"
+         animatedY = "-100px"
+         animatedX ="-500px"
+         animatedOpacity="1"
+         duration="0.8"
+         delay ="0.3"
+     >
+      <Image src={freepicFour} alt="imageSrc"  className=" "/>
+
+     </Card>
+   </div>
