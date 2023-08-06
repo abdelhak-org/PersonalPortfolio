@@ -1,0 +1,20 @@
+######
+https://nicepage.com/web-page-design/preview/welcome-to-our-company-1017939?device=desktop
+ref={card}
+      key={keyId}
+      initial={{
+        y: `${y}`,
+        x: `${x}`,
+        opacity: `${opacity}`,
+      }}
+      animate={{
+        y: `${animatedY}`,
+        x: `${animatedX}`,
+
+        opacity: `${animatedOpacity}`,
+      }}
+      transition={{
+        type: "spring",
+        duration: `${duration}`,
+        delay: `${delay}`,
+      }}
