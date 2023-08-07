@@ -25,7 +25,7 @@ const NavBar = () => {
  { show &&  <div
       className={`${
         show ? "" : ""
-      } max-w-[1535px] h-[100vh]   md:w-screen md:h-[55px] my-0 py-24 md:py-0  mx-auto flex overflow-hidden
+      } w-screen md:max-w-[1535px] h-[100vh]   md:w-screen md:h-[55px] my-0 py-24 md:py-0  mx-auto flex overflow-hidden
       flex-col items-center justify-center border-none  md:flex-row md:justify-between
       bg-gray-900  relative   `}
       >

@@ -10,7 +10,7 @@ const Works = () => {
     <>
       
       <div
-        className=" max-w-[1534px] min-h-screen  bg-slate-100 text-white relative my-0
+        className="w-screen md:max-w-[1534px] min-h-screen  bg-slate-100 text-white relative my-0
       mx-auto border flex flex-col  md:flex-row  justify-between  items-center   "
       >
         <ProjectBox left={500}>

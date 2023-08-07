@@ -13,7 +13,7 @@ const Skills = () => {
       
         
         
-        <div className=" max-w-[1534px] h-fit   py-24 flex-col md:flex-row flex mx-auto  justify-center items-start overflow-hidden ">
+        <div className=" w-screen md:max-w-[1534px] h-fit   py-24 flex-col md:flex-row flex mx-auto  justify-center items-start overflow-hidden ">
         <Card
           keyId="1"
           y="0px"

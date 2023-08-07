@@ -3,7 +3,7 @@ import Image from "next/image";
 import contactImg from "../../public/ConactImg.jpg";
 const Contact = () => {
   return (
-    <div className="max-w-[1534px] h-screen bg-slate-900 flex justify-between 
+    <div className="w-screen md:max-w-[1534px] h-screen bg-slate-900 flex justify-between 
     items-center flex-col md:flex-row mx-auto ">
       <div className="w-screen  md:w-[50%]  bg-slate-100 h-full overflow-hidden">
         <Image
