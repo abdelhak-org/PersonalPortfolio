@@ -7,12 +7,12 @@ import { dancingScript, oswald } from '../utils/fonts';
 
 export default function Home() {
   return (
-    <>
+    <div className="w-screen mx-auto ">
       <About />
       <Skills/>
       <FreePic/>
       <Works/>
       <Contact/>
-    </>
+    </div>
   );
 }
