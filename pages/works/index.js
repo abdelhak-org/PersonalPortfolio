@@ -4,16 +4,16 @@ import Image from "next/image";
 import demoOne from "../../public/demoOne.jpg";
 import demoTwo from "../../public/demoTwo.webp";
 import demoThree from "../../public/demoThree.gif";
-import SectionTitle from "@/components/SectionTitle";
+//import SectionTitle from "@/components/SectionTitle";
 const Works = () => {
   return (
     <>
       
       <div
-        className="w-screen md:max-w-[1534px] min-h-screen  bg-slate-100 text-white relative my-0
-      mx-auto border flex flex-col  md:flex-row  justify-between  items-center   "
+        className="w-screen md:max-w-[1534px] min-h-screen  bg-slate-100 
+      mx-auto border flex flex-col  md:flex-row  justify-between  items-center px-auto  "
       >
-        <ProjectBox left={500}>
+        <ProjectBox >
           <Image
             src={demoOne}
             alt="imageSrc"

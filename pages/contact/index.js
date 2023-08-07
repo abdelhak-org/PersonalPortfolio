@@ -12,7 +12,7 @@ const Contact = () => {
           className=" h-full object-cover "
         />
       </div>
-      <div className="w-screen  md:w-[50%] bg-slate-100 h-full py-8">
+      <div className="w-screen  md:w-[50%] bg-slate-900 text-white h-full py-8">
         <h1 className="text-center text-xl font-press-start ">Contact Us </h1>
         <form>
           <div className="w-full h-fit px-8  my-8">

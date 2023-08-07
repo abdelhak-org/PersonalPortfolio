@@ -4,17 +4,18 @@ const ProjectBox = ({children , left }) => {
 return (
     <motion.div
     initial={{
-        x:left
+        opacity:0
     }}
     whileInView ={{
-        x:0,
+        opacity:1,
         
     }}
     transition={{
+        type:"spring",
         duration:0.4,
         delay:0.4
     }}
-    className='w-screen  md:w-[30%] h-fit  border border-white rounded-md bg-green-400' 
+    className='w-screen  md:w-[30%] h-auto  border border-white rounded-md bg-green-400' 
     > 
     
     {children}
