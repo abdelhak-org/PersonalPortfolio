@@ -61,7 +61,7 @@ const About = () => {
           src={personalImage}
           alt="personalImage"
           
-          className="rounded-[50%] my-8 overflow-hidden shadow-sm   shadow-cyan-400 z-20"
+          className="rounded-[50%] my-8 overflow-hidden shadow-sm z-10   shadow-cyan-400 "
         />
       </div>
       <div className="w-[1533px] h-96 bg-[#1D5B79]  absolute bottom-0 left-0 clipPath "></div>
