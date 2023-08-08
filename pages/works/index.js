@@ -10,7 +10,7 @@ const Works = () => {
     <>
       
       <div
-        className="w-screen md:max-w-[1534px] min-h-screen  bg-slate-100 
+        className="w-screen md:max-w-[1534px] min-h-screen   bg-slate-100 
       mx-auto border flex flex-col  md:flex-row  justify-between  items-center px-auto  "
       >
         <ProjectBox >

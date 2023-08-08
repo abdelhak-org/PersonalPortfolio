@@ -1,11 +1,18 @@
+"use client";
+import { useState } from "react";
 import { dancingScript, oswald } from "@/utils/fonts";
 import Image from "next/image";
 import contactImg from "../../public/ConactImg.jpg";
 const Contact = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
   return (
-    <div className="w-screen md:max-w-[1534px] max-h-screen bg-slate-900 flex justify-between  
-    items-center flex-col md:flex-row mx-auto my-4 ">
-      <div className="w-screen  md:w-[50%]  bg-slate-100 h-full overflow-hidden">
+    <div
+      className="w-screen md:max-w-[1534px] max-h-screen bg-slate-900 flex justify-between  
+    items-center flex-col md:flex-row mx-auto my-4 "
+    >
+      <div className="w-screen md:w-[50%]  bg-slate-100 h-full overflow-hidden">
         <Image
           src={contactImg}
           alt="contactImg "
@@ -25,10 +32,12 @@ const Contact = () => {
               FullName
             </label>
             <input
+              onChange={(e) => setName(e.target.value)}
+              value={name}
               style={{
                 fontFamily: oswald.style.fontFamily,
               }}
-              className="py-2 px-2 w-full border  border-blue-300 rounded-md outline-0"
+              className="py-2 px-2 w-full border text-gray-800 tracking-wide border-blue-300 rounded-md outline-0"
               type="text"
               name="fullName "
               placeholder="Enter your Name "
@@ -44,10 +53,12 @@ const Contact = () => {
               Email
             </label>
             <input
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
               style={{
                 fontFamily: oswald.style.fontFamily,
               }}
-              className="py-2 px-2 w-full border  border-blue-300 rounded-md outline-none"
+              className="py-2 px-2 w-full border  text-gray-800 tracking-wide border-blue-300 rounded-md outline-none"
               type="email"
               name="Email "
               placeholder="Enter your E-mail "
@@ -60,18 +71,21 @@ const Contact = () => {
               }}
               className=" text-center text-xl my-8 "
             >
-              Password
+              Message
             </label>
-            <input
+            <textarea
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
               style={{
                 fontFamily: oswald.style.fontFamily,
               }}
-              className="py-2 px-2 w-full border  border-blue-300 rounded-md outline-none"
-              type="email"
-              name="password "
-              placeholder="Enter  your Password "
+              className="py-2 px-2 w-full  border overflow-scroll text-gray-800 tracking-wide  border-blue-300 rounded-md outline-none "
+              type="text"
+              name="Message"
+              placeholder="Write a Message  "
             />
           </div>
+
           <button
             style={{
               fontFamily: oswald.style.fontFamily,
