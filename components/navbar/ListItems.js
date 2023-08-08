@@ -1,7 +1,7 @@
 import React from "react";
 import LinkItem from "./LinkItem";
 import Link from "next/link";
-const ListItems = () => {
+const ListItems = ({setShow}) => {
   return (
     <ul className="w-full h-fit  px-4  md:w-fit ">
       <LinkItem>
@@ -20,7 +20,8 @@ const ListItems = () => {
             duration="1"
             delay={`0.${index}`}
           >
-            <Link href={item}>{item}</Link>
+            <Link
+             href={item}>{item}</Link>
           </LinkItem>
         );
       })}

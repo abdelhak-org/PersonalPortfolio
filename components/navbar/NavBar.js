@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useState } from "react";
-import LinkItem from "./LinkItem";
 import ListItems from "./ListItems";
 import SocialLinks from "./SocialLinks";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -19,11 +18,10 @@ const NavBar = () => {
       </div>
 
  { show &&  <div
-      onClick={()=> setShow(false)}
       className={`${
         show ? "" : ""
       } w-screen md:max-w-[1535px] h-[100vh]   md:w-screen md:h-[55px] my-0 py-24 md:py-0  mx-auto flex overflow-hidden
-      flex-col items-center justify-center border-none  md:flex-row md:justify-between fixed z-20
+      flex-col items-center justify-center border-none  md:flex-row md:justify-between 
       bg-gray-900    `}
       >
       <Logo />
