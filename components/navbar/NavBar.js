@@ -1,14 +1,12 @@
 "use client";
-import {  useState } from "react";
+import { useState } from "react";
 import ListItems from "./ListItems";
 import SocialLinks from "./SocialLinks";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "./Logo";
 const NavBar = () => {
   const [show, setShow] = useState(true);
-  
 
-  
   return (
     <>
       <div
@@ -20,18 +18,16 @@ const NavBar = () => {
 
       {show && (
         <div
-        onClick={()=>{
-          if(window.innerWidth <= "767"){
-            setShow(false)
-          } else {
-            setShow(true)
-          }
-          
-           
-        }}
+          onClick={() => {
+            if (window.innerWidth <= "767") {
+              setShow(false);
+            } else {
+              setShow(true);
+            }
+          }}
           className={`${
             show ? "" : ""
-          } w-screen md:max-w-[1535px] h-[100vh]   md:w-screen md:h-[55px] my-0 py-24 md:py-0  mx-auto flex overflow-hidden
+          } w-screen md:max-w-[1535px] h-[100vh] fixed md:relative   md:w-screen md:h-[55px] my-0 py-24 md:py-0  mx-auto flex overflow-hidden
       flex-col items-center justify-center border-none  md:flex-row md:justify-between 
       bg-gray-900    `}
         >
