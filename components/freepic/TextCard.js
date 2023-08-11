@@ -13,12 +13,12 @@ const TextCard = ({delay, title , id ,body  }) => {
       transition={{
         type:"spring" ,
         duration:2,
-        delay:`0.${delay}`,
+        delay:`${delay}`,
       }}
     
     className="p-4 ">
      
-      <div className="w-[360px] h-[260px] border-blue-200 border rounded-md relative p-4 bg-red-600
+      <div className="w-[360px] h-[260px] border-blue-200 border rounded-md relative p-4 bg-slate-100
           before:w-4 before:h-full before:content-[''] before:bg-green-600 before:absolute before:top-0 before:left-0
       ">
        <h3
