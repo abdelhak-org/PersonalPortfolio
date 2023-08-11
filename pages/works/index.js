@@ -2,9 +2,9 @@
 import ProjectBox from "@/components/works/ProjectBox";
 import Image from "next/image";
 import demoOne from "../../public/demoOne.jpg";
-import demoTwo from "../../public/demoTwo.webp";
+import demoTwo from "../../public/demoTwo.png";
 import demoThree from "../../public/demoThree.gif";
-//import SectionTitle from "@/components/SectionTitle";
+//import SectionTitle from "@/components/SecgtionTitle";
 const Works = () => {
   return (
     <>

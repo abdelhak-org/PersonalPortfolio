@@ -9,10 +9,10 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   return (
     <div
-      className="w-screen md:max-w-[1534px] min-h-screen bg-slate-100 flex justify-between  
+      className="w-screen md:max-w-[1534px] min-h-screen bg-slate-900 flex justify-between  
     items-center flex-col md:flex-row mx-auto my-4 "
     >
-      <div className="w-screen md:w-[50%]  bg-slate-100 h-full overflow-hidden">
+      <div className="w-screen md:w-[50%]  bg-slate-900 h-full overflow-hidden">
         <Image
           src={contactImg}
           alt="contactImg "

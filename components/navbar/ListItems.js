@@ -9,6 +9,8 @@ const ListItems = ({setShow}) => {
       </LinkItem>
       {["about", "skills", "works", "contact"].map((item, index) => {
         return (
+          <Link
+          href={item}>
           <LinkItem
             key={index}
             y="-200px"
@@ -20,9 +22,9 @@ const ListItems = ({setShow}) => {
             duration="1"
             delay={`0.${index}`}
           >
-            <Link
-             href={item}>{item}</Link>
+           {item}
           </LinkItem>
+          </Link>
         );
       })}
     </ul>
