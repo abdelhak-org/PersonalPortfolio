@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import personalImage from "../../public/personalPhoto.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -7,15 +7,16 @@ const About = () => {
   return (
     <div className="w-screen  md:max-w-[1534px] flex flex-col relative  bg-slate-900 overflow-hidden  md:flex-row  mx-auto p-4  min-h-screen justify-between items-center ">
       <div className="w-screen  md:w-[50%] md:h-auto  text-center relative pt-8 mx-auto md:border md:border-transparent md: border-r-slate-400    text-white  flex flex-col justify-center items-center">
-        <h3 className="font-bold text-md md:text-xl tracking-wide text-[#fff] font-press-start">
+        <h3 className="font-bold text-md md:text-xl tracking-wide text-[#fff] font-press-start ">
           Hello , I am
         </h3>
 
         <motion.h3
-        style={{
-          fontFamily:dancingScript.style.fontFamily
-        }}
-        className=" font-md text-xl md:font-bold  md:text-2xl tracking-widest  my-4 px-4 z-10   underline-offset-8 underline  text-[#03C988] ">
+          style={{
+            fontFamily: dancingScript.style.fontFamily,
+          }}
+          className=" font-md text-xl md:font-bold  md:text-2xl tracking-widest  my-4 px-4 z-10   underline-offset-8 underline  text-[#03C988] "
+        >
           Boussafer Abdelhak
         </motion.h3>
 
@@ -47,20 +48,26 @@ const About = () => {
         >
           Reactjs , Nextjs ,Nodejs , MongoDB
         </p>
-        <p className=" text-md font-light tracking-widest "  style={{ fontFamily: oswald.style.fontFamily }}
->
-          sass  ,  git , linux
+        <p
+          className=" text-md font-light tracking-widest "
+          style={{ fontFamily: oswald.style.fontFamily }}
+        >
+          sass , git , linux
         </p>
-        <button type="text" className="py-2 px-4 border border-cyan-400 shadow-sm shadow-cyan-200 
+        <button
+          type="text"
+          className="py-2 px-4 border border-cyan-400 shadow-sm shadow-cyan-200 
         hover:text-cyan-400 
-        rounded-md my-4 outline-0 hover:bg-slate-800 ">Read More </button>
+        rounded-md my-4 outline-0 hover:bg-slate-800 "
+        >
+          Read More{" "}
+        </button>
       </div>
       <div className="  w-[50%] h-[80vh] bg-slate-900 text-center relative pt-8 mx-auto text-white flex flex-col justify-center items-center">
         <div className="absolute w-20 h-20 rounded-full border-none  top-20 shadow-slate-200 bg-[#0c0c0c00] right-24 shadow-2xl	 "></div>
         <Image
           src={personalImage}
           alt="personalImage"
-          
           className="rounded-[50%] my-8 overflow-hidden shadow-sm z-10   shadow-cyan-400 "
         />
       </div>

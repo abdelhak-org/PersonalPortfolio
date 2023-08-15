@@ -7,21 +7,31 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+
+  const submitHandle =(e)=>{
+    e.preventDefault() ;
+    setEmail("")
+    setName("")
+    setMessage("")
+    
+  }
   return (
     <div
-      className="w-screen md:max-w-[1534px] min-h-screen bg-slate-900 flex justify-between  
+      className="w-screen md:max-w-[1534px] h-screen bg-slate-900 flex justify-between  
     items-center flex-col md:flex-row mx-auto my-4 "
     >
-      <div className="w-screen md:w-[50%]  bg-slate-900 h-full overflow-hidden">
+      <div className="w-screen   md:w-[50%]  bg-slate-900 h-full overflow-hidden">
         <Image
           src={contactImg}
           alt="contactImg "
           className=" h-full object-cover "
         />
       </div>
-      <div className="w-screen  md:w-[50%] bg-slate-900 text-white h-full py-8">
+      <div className="w-screen  md:w-[50%] bg-slate-900 text-white h-full py-16">
         <h1 className="text-center text-xl font-press-start ">Contact Us </h1>
-        <form>
+        <form onSubmit={submitHandle}
+        method="POST"
+        action="mailto:abdelhak.org@gmail.com">
           <div className="w-full h-fit px-8  my-8">
             <label
               style={{
