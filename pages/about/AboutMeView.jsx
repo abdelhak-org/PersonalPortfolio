@@ -11,7 +11,7 @@ const AboutMeView = () => {
         fontFamily:oswald.style.fontFamily
       }}
       className="w-[50%] block mx-auto text-white indent-4 line-clamp-4 tracking-wider text-lg font-extralight ">
-        Hello there! I'm [Your Name], a passionate and creative web developer
+        Hello there! I'm Boussafer Abdelhak , a passionate and creative web developer
         with a strong focus on crafting immersive and user-friendly digital
         experiences.<br/> <br/>
          With a deep love for code and design, I specialize in

@@ -9,7 +9,7 @@ import AboutMeView from "@/pages/about/AboutMeView";
 const About = () => {
   const [showAboutMe , setShowAboutMe ] = useState(false);
   return (
-    <div className="w-screen  md:max-w-[1534px] flex flex-col relative  bg-slate-900 overflow-hidden  md:flex-row  mx-auto p-4  min-h-screen justify-between items-center ">
+    <section className="w-screen  md:max-w-[1534px] flex flex-col relative  bg-slate-900 overflow-hidden  md:flex-row  mx-auto p-4  min-h-screen justify-between items-center ">
       <div className="w-screen  md:w-[50%] md:h-auto  text-center relative pt-8 mx-auto md:border md:border-transparent md: border-r-slate-400    text-white  flex flex-col justify-center items-center">
         <h3 className="font-bold text-md md:text-xl tracking-wide text-[#fff] font-press-start ">
           Hello , I am
@@ -78,7 +78,7 @@ const About = () => {
         />
       </div>
       <div className="w-[1533px] h-96 bg-[#1D5B79]  absolute bottom-0 left-0 clipPath "></div>
-    </div>
+    </section>
   );
 
         }

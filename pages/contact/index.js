@@ -9,12 +9,12 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const submitHandle =(e)=>{
-    e.preventDefault() ;
-    setState()
-  }
+  const submitHandle = (e) => {
+    e.preventDefault();
+    setState();
+  };
   return (
-    <div
+    <section
       className="w-screen md:max-w-[1534px] h-screen bg-slate-900 flex justify-between  
     items-center flex-col md:flex-row mx-auto my-4 "
     >
@@ -27,22 +27,11 @@ const Contact = () => {
       </div>
       <div className="w-screen  md:w-[50%] bg-slate-900 text-white h-full py-16">
         <h1 className="text-center text-xl font-press-start ">Contact Us </h1>
-        <form onSubmit={submitHandle}
-        method="POST"
-        action="mailto:abdelhak.org@gmail.com">
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <form
+          onSubmit={submitHandle}
+          method="POST"
+          action="mailto:abdelhak.org@gmail.com"
+        >
           <div className="w-full h-fit px-8  my-8">
             <label
               style={{
@@ -119,7 +108,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

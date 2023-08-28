@@ -9,7 +9,7 @@ const Works = () => {
   return (
     <>
       
-      <div
+      <section
         className="w-screen md:max-w-[1534px] min-h-screen   bg-slate-100 gap-4
       mx-auto border flex flex-col  md:flex-row  justify-between  items-center px-auto  "
       >
@@ -35,7 +35,7 @@ const Works = () => {
             className="w-full overflow-hidden"
           />
         </ProjectBox>
-      </div>
+      </section>
     </>
   );
 };

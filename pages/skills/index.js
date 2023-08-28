@@ -9,11 +9,11 @@ SectionTitle
 
 const Skills = () => {
   return (
-    <>
+      
       
         
-        
-        <div className=" w-screen md:max-w-[1534px] min-h-screen    py-24 flex-col md:flex-row flex mx-auto  justify-center items-center overflow-hidden ">
+        <>
+        <section className=" w-screen md:max-w-[1534px] min-h-screen    py-24 flex-col md:flex-row flex mx-auto  justify-center items-center overflow-hidden ">
         <Card
           keyId="1"
           y="0px"
@@ -83,15 +83,17 @@ const Skills = () => {
             Tailwindcss
           </h3>
         </Card>
-      </div>
-      <div className=" max-w-[1534px] bg-[#333]  h-fit  py-8 my-4 flex-col md:flex-row flex mx-auto 
+      </section>
+      <section className=" max-w-[1534px] bg-[#333]  h-fit  py-8 my-4 flex-col md:flex-row flex mx-auto 
       justify-center items-center  overflow-hidden">
  
        <h3 className="p-8 mx-2 my-2 text-2xl font-extrabold text-white rounded-full border shadow-lg tracking-widest uppercase shadow-cyan-300 ">Html</h3>
        <h3 className="p-8 mx-2 my-2 text-2xl font-extrabold text-white rounded-full border shadow-lg tracking-widest uppercase shadow-cyan-300 ">JavaScript  </h3>
        <h3 className="p-8 mx-2 my-2 text-2xl font-extrabold text-white rounded-full border shadow-lg tracking-widest uppercase shadow-cyan-300 ">Css </h3>
-      </div>
-    </>
+      </section>
+
+      </>
+    
   );
 };
 
