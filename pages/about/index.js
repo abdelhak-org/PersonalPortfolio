@@ -3,7 +3,11 @@ import personalImage from "../../public/personalPhoto.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { dancingScript, oswald } from "../../utils/fonts";
+import Link from "next/link";
+import { useState } from "react";
+import AboutMeView from "@/pages/about/AboutMeView";
 const About = () => {
+  const [showAboutMe , setShowAboutMe ] = useState(false);
   return (
     <div className="w-screen  md:max-w-[1534px] flex flex-col relative  bg-slate-900 overflow-hidden  md:flex-row  mx-auto p-4  min-h-screen justify-between items-center ">
       <div className="w-screen  md:w-[50%] md:h-auto  text-center relative pt-8 mx-auto md:border md:border-transparent md: border-r-slate-400    text-white  flex flex-col justify-center items-center">
@@ -54,13 +58,15 @@ const About = () => {
         >
           sass , git , linux
         </p>
-        <button
-          type="text"
+    <button
+          
           className="py-2 px-4 border border-cyan-400 shadow-sm shadow-cyan-200 
         hover:text-cyan-400 
         rounded-md my-4 outline-0 hover:bg-slate-800 "
         >
-          Read More{" "}
+          <Link href="/about/AboutMeView">
+        Read More
+          </Link>
         </button>
       </div>
       <div className="  w-[50%] h-[80vh] bg-slate-900 text-center relative pt-8 mx-auto text-white flex flex-col justify-center items-center">
@@ -74,6 +80,6 @@ const About = () => {
       <div className="w-[1533px] h-96 bg-[#1D5B79]  absolute bottom-0 left-0 clipPath "></div>
     </div>
   );
-};
 
+        }
 export default About;

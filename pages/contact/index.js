@@ -3,17 +3,15 @@ import { useState } from "react";
 import { dancingScript, oswald } from "@/utils/fonts";
 import Image from "next/image";
 import contactImg from "../../public/ConactImg.jpg";
+import TextInput from "@/components/contact/TextInput";
 const Contact = () => {
-  const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const submitHandle =(e)=>{
     e.preventDefault() ;
-    setEmail("")
-    setName("")
-    setMessage("")
-    
+    setState()
   }
   return (
     <div
@@ -32,6 +30,19 @@ const Contact = () => {
         <form onSubmit={submitHandle}
         method="POST"
         action="mailto:abdelhak.org@gmail.com">
+
+
+
+
+
+
+
+
+
+
+
+
+
           <div className="w-full h-fit px-8  my-8">
             <label
               style={{

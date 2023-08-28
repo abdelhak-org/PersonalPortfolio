@@ -10,9 +10,9 @@ const ListItems = ({setShow}) => {
       {["about", "skills", "works", "contact"].map((item, index) => {
         return (
           <Link
+          key={index}
           href={item}>
           <LinkItem
-            key={index}
             y="-200px"
             x="-200px"
             opacity="0"
