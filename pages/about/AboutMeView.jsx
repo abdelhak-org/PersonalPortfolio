@@ -4,13 +4,13 @@ import { oswald } from "@/utils/fonts";
 const AboutMeView = () => {
   return (
     
-    <div className="max-w-[1534px] h-screen flex flex-col justify-center items-center   mx-auto  bg-slate-900 pt-20  ">
+    <div className="max-w-[1534px] min-h-screen flex flex-col justify-center items-center   mx-auto  bg-slate-900 pt-20  ">
       <h3 className="block mb-8 text-white font-bold text-2xl capitalize tracking-widest  "> a small view about me </h3>
       <p
       style={{
         fontFamily:oswald.style.fontFamily
       }}
-      className="w-[50%] block mx-auto text-white indent-4 line-clamp-4 tracking-wider text-lg font-extralight ">
+      className="w-full p-4 md:w-[50%] block mx-auto text-white indent-4 line-clamp-4 tracking-wider text-lg font-extralight ">
         Hello there! I'm Boussafer Abdelhak , a passionate and creative web developer
         with a strong focus on crafting immersive and user-friendly digital
         experiences.<br/> <br/>
