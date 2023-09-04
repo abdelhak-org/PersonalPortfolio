@@ -5,14 +5,34 @@ import Image from "next/image";
 import contactImg from "../../public/ConactImg.jpg";
 import TextInput from "@/components/contact/TextInput";
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [user, setUser] = useState({ name: "", email: "", message: "" });
+  const [succeed , setSucceed] = useState(null);
+  const [failled , setFailled] = useState(null)
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const response = await fetch('/api/sendEmail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(user),
+        });
 
-  const submitHandle = (e) => {
-    e.preventDefault();
-    setState();
-  };
+        if (response.status === 200) {
+        //  alert('Email sent successfully!');
+          setSucceed('Email sent successfully!')
+          setUser({name:"" , email:"" ,message:""})
+        } else {
+          alert('An error occurred while sending the email.');
+          setFailled(true)
+        }
+      } catch (error) {
+        console.error(error);
+        alert('An error occurred while sending the email.');
+      }
+    };
+
   return (
     <section
       className="w-screen md:max-w-[1534px] h-screen bg-slate-900 flex justify-between  
@@ -28,12 +48,13 @@ const Contact = () => {
       <div className="w-screen  md:w-[50%] bg-slate-900 text-white h-full py-16">
         <h1 className="text-center text-xl font-press-start ">Contact Us </h1>
         <form
-          onSubmit={submitHandle}
+          onSubmit={handleSubmit}
           method="POST"
           action="mailto:abdelhak.org@gmail.com"
         >
           <div className="w-full h-fit px-8  my-8">
             <label
+              htmlFor="fullname"
               style={{
                 fontFamily: dancingScript.style.fontFamily,
               }}
@@ -41,9 +62,11 @@ const Contact = () => {
             >
               FullName
             </label>
-            <input
-              onChange={(e) => setName(e.target.value)}
-              value={name}
+            <input 
+            
+              id="fullname"
+              onChange={(e) => setUser({...user , name :e.target.value})}
+              value={user.name}
               style={{
                 fontFamily: oswald.style.fontFamily,
               }}
@@ -53,8 +76,10 @@ const Contact = () => {
               placeholder="Enter your Name "
             />
           </div>
+
           <div className="w-full h-fit px-8  my-8">
             <label
+              htmlFor="email"
               style={{
                 fontFamily: dancingScript.style.fontFamily,
               }}
@@ -63,8 +88,9 @@ const Contact = () => {
               Email
             </label>
             <input
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
+              id="email"
+              onChange={(e) => setUser({...user , email:e.target.value})}
+              value={user.email}
               style={{
                 fontFamily: oswald.style.fontFamily,
               }}
@@ -74,8 +100,10 @@ const Contact = () => {
               placeholder="Enter your E-mail "
             />
           </div>
+
           <div className="w-full h-fit px-8  my-8">
             <label
+              htmlFor="message"
               style={{
                 fontFamily: dancingScript.style.fontFamily,
               }}
@@ -84,8 +112,9 @@ const Contact = () => {
               Message
             </label>
             <textarea
-              onChange={(e) => setMessage(e.target.value)}
-              value={message}
+              id="message"
+              onChange={(e) => setUser({...user , message:e.target.value})}
+              value={user.message}
               style={{
                 fontFamily: oswald.style.fontFamily,
               }}
@@ -106,6 +135,8 @@ const Contact = () => {
           >
             Submit
           </button>
+          {failled && <p className="text-red-500 my-2 text-center"> An error occurred while sending the email</p>}
+          {succeed && <p className="text-green-500 my-2 text-center">Email sent successfully </p>}
         </form>
       </div>
     </section>
