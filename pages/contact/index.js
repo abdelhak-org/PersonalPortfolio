@@ -22,10 +22,17 @@ const Contact = () => {
         if (response.status === 200) {
         //  alert('Email sent successfully!');
           setSucceed('Email sent successfully!')
-          setUser({name:"" , email:"" ,message:""})
+          setUser({name:"" , email:"" ,message:""});
+          setTimeout(()=>{
+            setSucceed(null);
+          },2000)
         } else {
           alert('An error occurred while sending the email.');
-          setFailled(true)
+          setFailled(true);
+          setTimeout(()=>{
+            setFailled(null);
+          },2000)
+
         }
       } catch (error) {
         console.error(error);

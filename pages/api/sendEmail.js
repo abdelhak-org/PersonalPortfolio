@@ -1,6 +1,5 @@
 // pages/api/sendEmail.js
 import nodemailer from 'nodemailer';
-
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
@@ -10,8 +9,8 @@ export default async function handler(req, res) {
       const transporter = nodemailer.createTransport({
         service: 'Gmail', // E.g., 'Gmail', 'Outlook', 'Yahoo', etc.
         auth: {
-          user: "abdelhak.org@gmail.com",
-          pass: 'gdllesyjamgpaubr',
+          user:process.env.EMAIL,
+          pass: process.env.EMAIL_PASS,
         },
       });
 
