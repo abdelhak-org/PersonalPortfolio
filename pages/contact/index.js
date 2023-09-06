@@ -3,7 +3,7 @@ import { useState } from "react";
 import { dancingScript, oswald } from "@/utils/fonts";
 import Image from "next/image";
 import contactImg from "../../public/ConactImg.jpg";
-import TextInput from "@/components/contact/TextInput";
+//import TextInput from "@/components/contact/TextInput";
 const Contact = () => {
   const [user, setUser] = useState({ name: "", email: "", message: "" });
   const [succeed , setSucceed] = useState(null);
@@ -27,7 +27,7 @@ const Contact = () => {
             setSucceed(null);
           },2000)
         } else {
-          alert('An error occurred while sending the email.');
+         // alert('An error occurred while sending the email.');
           setFailled(true);
           setTimeout(()=>{
             setFailled(null);
@@ -57,7 +57,7 @@ const Contact = () => {
         <form
           onSubmit={handleSubmit}
           method="POST"
-          action="mailto:abdelhak.org@gmail.com"
+          action=""
         >
           <div className="w-full h-fit px-8  my-8">
             <label
@@ -70,7 +70,7 @@ const Contact = () => {
               FullName
             </label>
             <input 
-            
+              autoComplete="true"
               id="fullname"
               onChange={(e) => setUser({...user , name :e.target.value})}
               value={user.name}
@@ -95,6 +95,7 @@ const Contact = () => {
               Email
             </label>
             <input
+              autoComplete="true"
               id="email"
               onChange={(e) => setUser({...user , email:e.target.value})}
               value={user.email}
