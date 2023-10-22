@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { oswald } from "@/utils/fonts";
 const LinkItem = ({
-  children,
-  keyId,
+  title,
   y,
   x,
   opacity,
@@ -14,7 +13,6 @@ const LinkItem = ({
 }) => {
   return (
     <motion.li
-      key={keyId}
       initial={{
         y: y,
         x: x,
@@ -37,7 +35,7 @@ const LinkItem = ({
       rounded-lg text-[#03C988] text-sm underline-offset-0 my-4
       font-light cursor-pointer capitalize "
     >
-      {children}
+      {title}
     </motion.li>
   );
 };

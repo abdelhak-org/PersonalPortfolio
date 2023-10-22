@@ -1,7 +1,7 @@
 import React ,{useState} from 'react'
 import { dancingScript, oswald }  from "../../utils/fonts";
 
-const TextInput = ({label , type , placeholder ,onSubmit  }) => {
+const TextInput = ({label , type , placeholder ,onSubmit   }) => {
   const [state, setState] = useState("");
     onSubmit={onSubmit}
   return (
