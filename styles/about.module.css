@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.clipPath {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    clip-path: polygon(100% 100%, 0 98%, 100% 62%);
+}
