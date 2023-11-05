@@ -32,7 +32,7 @@ const NavBar = () => {
       flex-col items-center justify-center border-none  md:flex-row md:justify-between 
         `}
         >
-          <Logo />
+          <Logo  title='Abdel'/>
           <ListItems />
           <SocialLinks />
         </div>

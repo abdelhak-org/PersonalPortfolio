@@ -9,22 +9,27 @@ const SocialLinks = () => {
         <FaTwitter className="text-xl" />,
         <FaGithub className="text-xl" />,
       ].map((item, index) => {
-        return (
-          <LinkItem
-            key={index}
-            y="0px"
-            x="200px"
-            opacity="0.2"
-            animatedY="0"
-            animatedX="0"
-            animatedOpacity="1"
-            duration="1"
-            delay={`1.${index}`}
-          >
-            {item}
-          </LinkItem>
-        );
-      })}
+
+       return(
+        <LinkItem
+        title={item}
+        key={index}
+        y="0px"
+        x="200px"
+        opacity="0.2"
+        animatedY="0"
+        animatedX="0"
+        animatedOpacity="1"
+        duration="1"
+        delay={`1.${index}`}
+     / >
+       
+       )
+
+
+      })
+
+        }
     </ul>
   );
 };
