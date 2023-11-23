@@ -10,14 +10,14 @@ const Works = () => {
     <>
       
       <section
-        className="w-screen md:max-w-[1534px] min-h-screen   bg-slate-100 gap-4
-      mx-auto border flex flex-col  md:flex-row  justify-around  items-center px-auto  "
+        className="w-screen md:max-w-[1534px]  min-h-screen border-none    bg-slate-100 dark:bg-slate-800 g
+      mx-auto  flex flex-col  md:flex-row  justify-around  items-center px-auto gap-4 "
       >
         <ProjectBox >
           <Image
             src={demoOne}
             alt="imageSrc"
-            className="w-full overflow-hidden"
+            className="h-full overflow-hidden"
           />
         </ProjectBox>
         
@@ -25,14 +25,14 @@ const Works = () => {
           <Image
             src={demoTwo}
             alt="imageSrc"
-            className="w-full overflow-hidden"
+            className="h-full overflow-hidden"
           />
           </ProjectBox>
           <ProjectBox  left={-500}>
           <Image
             src={demoThree}
             alt="imageSrc"
-            className="w-full overflow-hidden  "
+            className="h-full overflow-hidden  "
           />
           </ProjectBox>
       </section>

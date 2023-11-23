@@ -12,10 +12,13 @@ const NavBar = () => {
       <div
         data-testid="container"
         onClick={() => setShow(!show)}
-        className=" md:hidden my-2 mx-auto text-center text-3xl p-4 text-white
-         bg-slate-900 cursor-pointer fixed top-4 right-4 z-50 "
+        className=" md:hidden my-2 mx-auto text-center text-3xl p-4
+        dark:text-slate-100 dark:bg-slate-900 bg-slate-100 text-slate-900
+         cursor-pointer fixed top-4 right-4 z-50 "
       >
-        {!show ? <AiOutlineMenu /> : <AiOutlineClose />}
+        {
+        !show ? <AiOutlineMenu /> : <AiOutlineClose />
+        }
       </div>
 
       {show && (
@@ -27,10 +30,8 @@ const NavBar = () => {
               setShow(true);
             }
           }}
-          className={`${
-            show ? "" : ""
-          } w-screen md:max-w-[1535px] h-[100vh] fixed z-40  md:relative   md:w-screen md:h-[55px] my-0 py-24 md:py-0 bg-slate-900 mx-auto flex overflow-hidden
-      flex-col items-center justify-center border-none  md:flex-row md:justify-between 
+          className={` w-screen md:max-w-[1535px]   fixed z-40  md:relative   md:w-screen md:h-[55px] my-0 py-24 md:py-0  mx-auto flex overflow-hidden
+      flex-col items-center justify-center border-none  md:flex-row md:justify-between dark:bg-slate-900 bg-white
         `}
         >
           <Logo />

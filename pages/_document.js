@@ -1,8 +1,10 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
+
+
   return (
-    <Html lang="en">
+    <Html lang="en" > 
       <Head>
       <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -12,7 +14,7 @@ export default function Document() {
     <link rel="stylesheet" href="styles.css" />
 
       </Head>
-      <body>
+      <body className=' bg-slate-100' >
         <Main />
         <NextScript />
       </body>
