@@ -14,7 +14,7 @@ export default function Document() {
     <link rel="stylesheet" href="styles.css" />
 
       </Head>
-      <body className=' bg-slate-100' >
+      <body className='bg-white' >
         <Main />
         <NextScript />
       </body>

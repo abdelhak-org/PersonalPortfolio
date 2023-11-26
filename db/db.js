@@ -6,7 +6,22 @@ export const navLinks = ["about", "skills", "works", "contact"]
 
 
 export const socialLinks = [
-    <FaFacebook className=" text-xl  " />,
-    <FaTwitter className="text-xl" />,
-    <FaGithub className="text-xl" />,
+    {
+      id:1,
+      icon :<FaFacebook className=" text-xl  " />,
+      link :"https://facebook.com/"
+    }
+    ,
+    {
+      id:2 ,
+      icon : <FaTwitter className="text-xl" />,
+      link : "https://twitter.com/"
+    } ,
+    {
+      id :3 ,
+      icon :<FaGithub className="text-xl" />,
+      link : "https://github.com/"
+
+    }
+    
   ]

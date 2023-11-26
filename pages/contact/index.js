@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { dancingScript, oswald } from "@/utils/fonts";
+import { dancingScript, oswald , roboto} from "@/utils/fonts";
 import Image from "next/image";
 import contactImg from "../../public/ConactImg.jpg";
 //import TextInput from "@/components/contact/TextInput";
@@ -42,32 +42,33 @@ const Contact = () => {
 
   return (
     <section
-      className="w-screen md:max-w-[1534px] h-screen bg-slate-900 flex justify-between  
-    items-center flex-col md:flex-row mx-auto my-4 "
+      className="w-screen md:max-w-[1534px] h-screen dark:bg-slate-900 bg-gray-200    flex justify-between  
+    items-center flex-col md:flex-row mx-auto  "
     >
-      <div className="w-screen   md:w-[50%]  bg-slate-900 h-full overflow-hidden">
+      <div className="w-screen   md:w-[50%]  h-full overflow-hidden  ">
         <Image
           src={contactImg}
           alt="contactImg "
           className=" h-full object-cover "
         />
       </div>
-      <div className="w-screen  md:w-[50%] bg-slate-900 text-white h-full py-16">
-        <h1 className="text-center text-xl font-press-start ">Contact Us </h1>
+      <div className="w-screen  md:w-[50%] dark:bg-slate-900 bg-gray-100  tracking-wider h-full flex justify-center items-center flex-col">
+        <h1 className="text-center text-2xl my-4 dark:bg-slate-800 bg-slate-800 text-white  w-[616px]  p-4 rounded-md ">Contact Us </h1>
         <form
+          className="border p-2 rounded-md dark:border-slate-500 border-slate-300 my-2 bg-gray-200 dark:bg-slate-800"
           onSubmit={handleSubmit}
           method="POST"
           action=""
         >
-          <div className="w-full h-fit px-8  my-8">
+          <div className="w-[600px] h-16 px-4  rounded-md  my-8 border border-gray-600 flex justify-between items-center">
             <label
               htmlFor="fullname"
               style={{
-                fontFamily: dancingScript.style.fontFamily,
+                fontFamily: roboto.style.fontFamily,
               }}
-              className=" text-center text-xl my-8 "
+              className="text-xl  font-light dark:text-white text-slate-900 "
             >
-              FullName
+              Name : 
             </label>
             <input 
               autoComplete="true"
@@ -75,24 +76,23 @@ const Contact = () => {
               onChange={(e) => setUser({...user , name :e.target.value})}
               value={user.name}
               style={{
-                fontFamily: oswald.style.fontFamily,
+                fontFamily: roboto.style.fontFamily,
               }}
-              className="py-2 px-2 w-full border text-gray-800 tracking-wide border-blue-300 rounded-md outline-0"
+              className="w-[400px] py-2 px-2  bg-gray-200  text-gray-800 border border-gray-600   shadow-md tracking-wider rounded-md outline-0"
               type="text"
               name="fullName "
               placeholder="Enter your Name "
             />
           </div>
 
-          <div className="w-full h-fit px-8  my-8">
+          <div  className="w-[600px] h-16 px-4  rounded-md  my-8 border border-gray-600 flex justify-between items-center">
             <label
               htmlFor="email"
               style={{
-                fontFamily: dancingScript.style.fontFamily,
+                fontFamily: roboto.style.fontFamily,
               }}
-              className=" text-center text-xl my-8 "
-            >
-              Email
+              className="text-xl  font-light dark:text-white  text-slate-900"            >
+              Email :
             </label>
             <input
               autoComplete="true"
@@ -102,31 +102,30 @@ const Contact = () => {
               style={{
                 fontFamily: oswald.style.fontFamily,
               }}
-              className="py-2 px-2 w-full border  text-gray-800 tracking-wide border-blue-300 rounded-md outline-none"
-              type="email"
+              className="w-[400px] py-2 px-2  bg-gray-200  text-gray-800 border border-gray-600   shadow-md tracking-wider rounded-md outline-0"              type="email"
               name="Email "
               placeholder="Enter your E-mail "
             />
           </div>
 
-          <div className="w-full h-fit px-8  my-8">
+          <div  className="w-[600px] h-60 px-4 py-8  rounded-md border border-gray-600 flex flex-row justify-between items-center">
             <label
               htmlFor="message"
               style={{
-                fontFamily: dancingScript.style.fontFamily,
+                fontFamily: roboto.style.fontFamily,
               }}
-              className=" text-center text-xl my-8 "
+              className=" text-center text-xl my-8 dark:text-white text-slate-900 "
             >
-              Message
+              Message :
             </label>
             <textarea
               id="message"
               onChange={(e) => setUser({...user , message:e.target.value})}
               value={user.message}
               style={{
-                fontFamily: oswald.style.fontFamily,
+                fontFamily: roboto.style.fontFamily,
               }}
-              className="py-2 px-2 w-full  border overflow-scroll text-gray-800 tracking-wide  border-blue-300 rounded-md outline-none "
+              className="w-[400px] h-full p-4  bg-gray-200  text-gray-800 border border-gray-600   shadow-md tracking-wider rounded-md outline-0"
               type="text"
               name="Message"
               placeholder="Write a Message  "
@@ -134,10 +133,10 @@ const Contact = () => {
           </div>
 
           <button
-            style={{
-              fontFamily: oswald.style.fontFamily,
-            }}
-            className="px-4 py-1  border border-blue-300 
+          style={{
+            fontFamily: roboto.style.fontFamily,
+          }}
+            className="px-8 py-2 my-8 border border-gray-600 
            rounded-md tracking-wide mx-auto block bg-slate-900 text-white font-bold"
             type="submit"
           >

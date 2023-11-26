@@ -31,7 +31,7 @@ const NavBar = () => {
             }
           }}
           className={` w-screen md:max-w-[1535px]   fixed z-40  md:relative   md:w-screen md:h-[55px] my-0 py-24 md:py-0  mx-auto flex overflow-hidden
-      flex-col items-center justify-center border-none  md:flex-row md:justify-between dark:bg-slate-900 bg-white
+      flex-col items-center justify-center border border-white   border-b-gray-100  dark:border-slate-800  md:flex-row md:justify-between dark:bg-slate-900 bg-white
         `}
         >
           <Logo />
