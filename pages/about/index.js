@@ -60,7 +60,7 @@ const About = () => {
           <Link href="/about/AboutMeView">Read More</Link>
         </button>
       </div>
-      <div className="  w-[50%] h-[80vh] dark:bg-slate-800 bg-gray-600 rounded-md text-center relative  mx-auto text-white flex flex-col justify-center items-center">
+      <div className="  w-[50%] h-[100vh] dark:bg-slate-800 bg-gray-600 rounded-md text-center relative  mx-auto text-white flex flex-col justify-center items-center">
         <div className="absolute w-20 h-20 rounded-full border-none  top-20 shadow-slate-200 bg-[#0c0c0c00] right-24 shadow-2xl	 "></div>
         <Image
           src={personalImage}
