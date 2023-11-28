@@ -9,8 +9,10 @@ import AboutMeView from "@/pages/about/AboutMeView";
 const About = () => {
   const [showAboutMe, setShowAboutMe] = useState(false);
   return (
-    <section className="w-screen  md:max-w-[1534px]   flex flex-col relative  dark:bg-slate-900 overflow-hidden  md:flex-row  mx-auto   h-screen justify-between items-center ">
-      <div className="w-screen  md:w-[50%] h-full   relative  mx-auto md:border md:border-transparent md: border-r-slate-400    text-white  flex flex-col justify-center items-start pl-16">
+    <section className="w-screen mb-1  pt-20 md:py-2 md:max-w-[1534px]   flex flex-col relative  dark:bg-slate-900 overflow-hidden
+      md:flex-row  mx-auto   h-screen justify-between items-center ">
+      <div className="w-screen  md:w-[50%] h-full   relative  mx-auto md:border md:border-transparent md: border-r-slate-400
+          text-white  flex flex-col justify-center items-start pl-8 md:pl-16 py-4">
         <h3 className="font-bold text-md md:text-xl tracking-wide dark:text-white text-slate-900 font-sans">
           Hello , I am
         </h3>
@@ -60,15 +62,18 @@ const About = () => {
           <Link href="/about/AboutMeView">Read More</Link>
         </button>
       </div>
-      <div className="  w-[50%] h-[100vh] dark:bg-slate-800 bg-gray-600 rounded-md text-center relative  mx-auto text-white flex flex-col justify-center items-center">
+      <div className=" w-full  md:w-[50%] h-full dark:bg-slate-800 bg-gray-600 rounded-md text-center relative  mx-auto text-white flex flex-col justify-center items-center">
         <div className="absolute w-20 h-20 rounded-full border-none  top-20 shadow-slate-200 bg-[#0c0c0c00] right-24 shadow-2xl	 "></div>
+        <div className="w-full">
         <Image
           src={personalImage}
           alt="personalImage"
-          className="rounded-[50%]  overflow-hidden shadow-sm z-10   shadow-cyan-400 "
+          className=" rounded-[50%]  overflow-hidden shadow-sm z-10   shadow-cyan-400 "
         />
+
+        </div>
       </div>
-      <div className="w-[1534px] h-96 dark:bg-[#1D5B79] bg-gray-500  absolute bottom-0 left-0 clipPath "></div>
+      <div className="w-full max-w-[1534px] h-48 md:h-96 dark:bg-[#1D5B79] bg-gray-500  absolute bottom-0 left-0 clipPath "></div>
     </section>
   );
 };

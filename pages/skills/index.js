@@ -10,7 +10,8 @@ SectionTitle;
 const Skills = () => {
   return (
     <>
-      <section className=" w-screen md:max-w-[1534px] min-h-screen dark:text-slate-200 dark:bg-slate-900 bg-white text-slate-900    py-24 flex-col md:flex-row flex mx-auto  justify-center items-center overflow-hidden ">
+      <section className=" w-screen p-2 md:max-w-[1534px] min-h-screen dark:text-slate-200 dark:bg-slate-800 bg-white text-slate-900 
+         py-24 flex-col md:flex-row flex mx-auto gap-2  justify-center items-center overflow-hidden ">
         <Card
           keyId="1"
           y="0px"

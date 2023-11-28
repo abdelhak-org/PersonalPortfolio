@@ -41,27 +41,28 @@ const Contact = () => {
 
   return (
     <section
-      className="w-screen md:max-w-[1534px] h-screen dark:bg-slate-900 bg-gray-100   flex justify-between  
-    items-center flex-col md:flex-row mx-auto  "
+      className="w-screen my-2  md:max-w-[1534px] min-h-screen dark:bg-slate-900 bg-gray-100   flex justify-between  
+       items-center flex-col md:flex-row   "
     >
-      <div className="w-screen   md:w-[50%]  h-full overflow-hidden  ">
+      <div className="w-screen   md:w-[50%]  overflow-hidden  ">
         <Image
           src={contactImg}
           alt="contactImg "
           className=" h-full object-cover  "
         />
       </div>
-      <div className="w-screen  md:w-[50%] dark:bg-slate-900 bg-gray-100  tracking-wider h-full flex justify-center items-center flex-col">
-        <h1 className="text-center text-2xl my-4 dark:bg-slate-800 bg-slate-800 text-white  w-[616px]  p-4 rounded-md ">
+      <div className="w-full    md:w-[50%] dark:bg-slate-900 bg-gray-100  tracking-wider h-screen flex justify-center items-center flex-col">
+        <h1 className="w-full md:mr-10 text-center text-2xl my-4 dark:bg-slate-800
+         bg-slate-800 text-white  gap-1  p-2 rounded-md ">
           Contact Us{" "}
         </h1>
         <form
-          className="border p-2 rounded-md dark:border-slate-500 border-slate-300 my-2 bg-gray-200 dark:bg-slate-800"
+          className="w-full h-fit md:mr-8   border px-2 md:px-8 rounded-md dark:border-slate-500 border-slate-300 my-2 bg-gray-200 dark:bg-slate-800"
           onSubmit={handleSubmit}
           method="POST"
           action=""
         >
-          <div className="w-[600px] h-16 px-4  rounded-md  my-8 border border-gray-600 flex justify-between items-center">
+          <div className="w-full h-16 mx-auto pr-8 gap-2  rounded-md  my-8 border border-gray-600 flex justify-between items-center ">
             <label
               htmlFor="fullname"
               style={{
@@ -79,14 +80,14 @@ const Contact = () => {
               style={{
                 fontFamily: roboto.style.fontFamily,
               }}
-              className="w-[400px] py-2 px-2  bg-gray-200  text-gray-800 border border-gray-600   shadow-md tracking-wider rounded-md outline-0"
+              className=" flex-grow py-2 px-2  bg-gray-200  text-gray-800 border border-gray-600   shadow-md tracking-wider rounded-md outline-0"
               type="text"
               name="fullName "
               placeholder="Enter your Name "
             />
           </div>
 
-          <div className="w-[600px] h-16 px-4  rounded-md  my-8 border border-gray-600 flex justify-between items-center">
+          <div className="w-full h-16 mx-auto px-2 gap-2  rounded-md  my-8 border border-gray-600 flex justify-between items-center ">
             <label
               htmlFor="email"
               style={{
@@ -104,14 +105,14 @@ const Contact = () => {
               style={{
                 fontFamily: oswald.style.fontFamily,
               }}
-              className="w-[400px] py-2 px-2  bg-gray-200  text-gray-800 border border-gray-600   shadow-md tracking-wider rounded-md outline-0"
+              className="flex-grow py-2 px-2  bg-gray-200  text-gray-800 border border-gray-600   shadow-md tracking-wider rounded-md outline-0"
               type="email"
               name="Email "
               placeholder="Enter your E-mail "
             />
           </div>
 
-          <div className="w-[600px] h-60 px-4 py-8  rounded-md border border-gray-600 flex flex-row justify-between items-center">
+          <div className="w-full h-60 px-4 py-8 gap-2  rounded-md border border-gray-600 flex flex-row justify-between items-center">
             <label
               htmlFor="message"
               style={{
@@ -128,7 +129,7 @@ const Contact = () => {
               style={{
                 fontFamily: roboto.style.fontFamily,
               }}
-              className="w-[400px] h-full p-4  bg-gray-200  text-gray-800 border border-gray-600   shadow-md tracking-wider rounded-md outline-0"
+              className="flex-grow py-2 px-2  bg-gray-200   text-gray-800 border border-gray-600   shadow-md tracking-wider rounded-md outline-0"
               type="text"
               name="Message"
               placeholder="Write a Message  "
