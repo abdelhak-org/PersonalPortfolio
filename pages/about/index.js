@@ -9,7 +9,7 @@ import AboutMeView from "@/pages/about/AboutMeView";
 const About = () => {
   const [showAboutMe, setShowAboutMe] = useState(false);
   return (
-    <section className="w-screen mb-1  pt-20 md:py-2 md:max-w-[1534px]   flex flex-col relative  dark:bg-slate-900 overflow-hidden
+    <section className="w-screen min-h-screen mb-1  pt-20 md:py-2 md:max-w-[1534px]   flex flex-col relative  dark:bg-slate-900 overflow-hidden
       md:flex-row  mx-auto   h-screen justify-between items-center ">
       <div className="w-screen  md:w-[50%] h-full   relative  mx-auto md:border md:border-transparent md: border-r-slate-400
           text-white  flex flex-col justify-center items-start pl-8 md:pl-16 py-4">
@@ -64,7 +64,7 @@ const About = () => {
       </div>
       <div className=" w-full  md:w-[50%] h-full dark:bg-slate-800 bg-gray-600 rounded-md text-center relative  mx-auto text-white flex flex-col justify-center items-center">
         <div className="absolute w-20 h-20 rounded-full border-none  top-20 shadow-slate-200 bg-[#0c0c0c00] right-24 shadow-2xl	 "></div>
-        <div className="w-full">
+        <div className="w-full h-full">
         <Image
           src={personalImage}
           alt="personalImage"
