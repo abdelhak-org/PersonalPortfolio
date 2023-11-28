@@ -44,14 +44,14 @@ const Contact = () => {
       className="w-screen my-2  md:max-w-[1534px] min-h-screen dark:bg-slate-900 bg-gray-100   flex justify-between  
        items-center flex-col md:flex-row   "
     >
-      <div className="w-screen   md:w-[50%]  overflow-hidden  ">
+      <div className="w-screen h-screen   md:w-[50%]  overflow-hidden  ">
         <Image
           src={contactImg}
           alt="contactImg "
           className=" h-full object-cover  "
         />
       </div>
-      <div className="w-full    md:w-[50%] dark:bg-slate-900 bg-gray-100  tracking-wider h-screen flex justify-center items-center flex-col">
+      <div className="w-full h-screen   md:w-[50%] dark:bg-slate-900 bg-gray-100  tracking-wider  flex justify-center items-center flex-col">
         <h1 className="w-full md:mr-10 text-center text-2xl my-4 dark:bg-slate-800
          bg-slate-800 text-white  gap-1  p-2 rounded-md ">
           Contact Us{" "}
