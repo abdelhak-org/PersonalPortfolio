@@ -42,27 +42,29 @@ const Contact = () => {
   return (
     <section
       className="w-screen my-2  md:max-w-[1534px] min-h-screen dark:bg-slate-900 bg-gray-100   flex justify-between  
-       items-center flex-col md:flex-row   "
+       items-center flex-col md:flex-row md:mx-auto  "
     >
-      <div className="w-screen min-h-screen   md:w-[50%]  overflow-hidden  ">
+      <div className="w-screen h-screen  md:w-[50%]  overflow-hidden  ">
         <Image
           src={contactImg}
           alt="contactImg "
           className=" h-full w-full object-cover  "
         />
       </div>
-      <div className="w-full h-screen   md:w-[50%] dark:bg-slate-900 bg-gray-100  tracking-wider  flex justify-center items-center flex-col">
+
+      <div className="w-full h-screen   md:w-[50%] dark:bg-slate-900 bg-gray-100  tracking-wider
+        flex justify-center items-center flex-col px-8 ">
         <h1 className="w-full md:mr-10 text-center text-2xl my-4 dark:bg-slate-800
-         bg-slate-800 text-white  gap-1  p-2 rounded-md ">
+         bg-slate-800 text-white  gap-1  p-2 rounded-md md:mx-auto ">
           Contact Us{" "}
         </h1>
         <form
-          className="w-full h-fit md:mr-8   border px-2 md:px-8 rounded-md dark:border-slate-500 border-slate-300 my-2 bg-gray-200 dark:bg-slate-800"
+          className="w-full h-screen  mx-auto    border px-2 md:px-8 rounded-md dark:border-slate-500 border-slate-300 my-2 bg-gray-200 dark:bg-slate-800"
           onSubmit={handleSubmit}
           method="POST"
           action=""
         >
-          <div className="w-full h-16 mx-auto pr-8 gap-2  rounded-md  my-8 border border-gray-600 flex justify-between items-center ">
+          <div className="w-full h-16 mx-auto  gap-2  rounded-md  my-8 border border-gray-600 flex justify-between items-center ">
             <label
               htmlFor="fullname"
               style={{

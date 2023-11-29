@@ -8,11 +8,11 @@ const NavBar = () => {
   const [show, setShow] = useState(true);
 
   return (
-    <div  className="w-screen ">
+      <div className="max-w-[1534px] h-fit mx-auto ">
       <div
         data-testid="container"
         onClick={() => setShow(!show)}
-        className="  md:hidden my-4  text-center text-3xl p-1 md:p-4 absolute
+        className="  md:hidden my-8 text-center text-3xl p-1 md:p-4 absolute
         dark:text-slate-100 dark:bg-slate-900 bg-slate-100 text-slate-900
          cursor-pointer top-4 right-4 z-50 "
       >
@@ -28,7 +28,7 @@ const NavBar = () => {
                 setShow(true);
               }
             }}
-        className={`w-screen md:max-w-[1535px]   z-40  relative   md:w-screen md:h-[55px] my-8 md:my-0 py-24 md:py-0  mx-auto flex overflow-hidden
+        className={`w-screen    z-40  relative    md:h-[55px] md:w-full  md:my-0 py-24 md:py-0  mx-auto flex overflow-hidden
         flex-col items-center justify-center border border-white   border-b-gray-100  dark:border-slate-800 
         md:flex-row md:justify-between dark:bg-slate-900 bg-white
           `}
@@ -39,7 +39,7 @@ const NavBar = () => {
           <SocialLinks />
         </div>
       )}
-    </div>
+      </div>
   );
 };
 
