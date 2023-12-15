@@ -1,23 +1,22 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
-
-
   return (
-    <Html lang="en" > 
+    <Html lang="en">
       <Head>
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
       </Head>
-      <body className='bg-white' >
+      <body className="bg-white">
         <Main />
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }

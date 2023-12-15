@@ -69,16 +69,16 @@ const About = () => {
         text-white flex flex-col justify-center items-center">
        
         <div className="absolute w-20 h-20 rounded-full border-none  top-20 shadow-slate-200 bg-[#0c0c0c00] right-24 shadow-2xl	 "></div>
-        <div className="w-full h-full">
+        <div className="w-ful h-full overflow-hidden ">
         <Image
           src={personalImage}
-          alt="personalImage"
-          className=" rounded-[50%]  overflow-hidden shadow-sm z-10   shadow-cyan-400 "
+          alt="personalImage" 
+          className= " rounded-[50%]  overflow-hidden shadow-sm z-10   shadow-cyan-400  "
         />
 
         </div>
       </div>
-      <div className="w-full max-w-[1534px] h-48 md:h-96 dark:bg-[#1D5B79] bg-gray-500  absolute bottom-0 left-0 clipPath "></div>
+      <div className="w-full max-w-[1534px] h-48 md:h-96 dark:bg-[#1D5B79] bg-gray-500 z-50  absolute -bottom-1 left-0 clipPath "></div>
     </section>
   );
 };

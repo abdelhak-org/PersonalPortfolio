@@ -114,15 +114,15 @@ const Contact = () => {
             />
           </div>
 
-          <div className="w-full h-60 px-4 py-8 gap-2  rounded-md border border-gray-600 flex flex-row justify-between items-center">
+          <div className="w-full  px-4 py-2 gap-2  rounded-md border border-gray-600 flex flex-col md:flex-row ">
             <label
               htmlFor="message"
               style={{
                 fontFamily: roboto.style.fontFamily,
               }}
-              className=" text-center text-xl my-8 dark:text-white text-slate-900 "
+              className="  text-xl  dark:text-white text-slate-900  "
             >
-              Message :
+              Message 
             </label>
             <textarea
               id="message"
@@ -131,7 +131,8 @@ const Contact = () => {
               style={{
                 fontFamily: roboto.style.fontFamily,
               }}
-              className="flex-grow py-2 px-2  bg-gray-200   text-gray-800 border border-gray-600   shadow-md tracking-wider rounded-md outline-0"
+              className="w-full min-h-60 py-2 px-2 flex-grow bg-gray-200   text-gray-800 border border-gray-600 
+                shadow-md tracking-wider rounded-md outline-0"
               type="text"
               name="Message"
               placeholder="Write a Message  "
