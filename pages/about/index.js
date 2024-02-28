@@ -9,7 +9,7 @@ import AboutMeView from "@/pages/about/AboutMeView";
 const About = () => {
   const [showAboutMe, setShowAboutMe] = useState(false);
   return (
-    <section className="w-screen  min-h-screen md:h-screen  md:max-w-[1534px] mx-auto pt-20 md:py-0 
+    <section className="w-screen    md:max-w-[1534px] mx-auto pt-20 md:py-0  border
       flex flex-col relative  dark:bg-slate-900
       md:flex-row   justify-between items-center ">
           
