@@ -5,7 +5,7 @@ const Logo = ({title}) => {
   return (
     <div className=" w-fit h-auto text-white  ">
       <LinkItem
-      title={"AbdelTech."}
+      title={title}
         y="-0px"
         x="-200px"
         opacity="0.2"

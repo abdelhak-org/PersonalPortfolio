@@ -3,7 +3,8 @@ import LinkItem from "./LinkItem";
 import { FaFacebook, FaTwitter, FaGithub } from "react-icons/fa";
 const SocialLinks = () => {
   return (
-    <ul className="w-fit md:w-fit px-4 flex items-center ">
+    <ul className="w-fit md:w-fit px-4 flex items-center space-x-8 ">
+     
       {[
         <FaFacebook className=" text-xl  " />,
         <FaTwitter className="text-xl" />,
@@ -22,11 +23,10 @@ const SocialLinks = () => {
         animatedOpacity="1"
         duration="1"
         delay={`1.${index}`}
-     / >
+        />
        
        )
-
-
+       
       })
 
         }

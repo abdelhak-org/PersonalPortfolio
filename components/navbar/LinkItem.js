@@ -12,16 +12,18 @@ const LinkItem = ({
   delay,
 }) => {
   return (
+
     <motion.li
-      initial={{
-        y: y,
-        x: x,
+
+initial={{
+  y: y,
+  x: x,
         opacity: opacity,
       }}
       animate={{
         y: animatedY,
         x: animatedX,
-
+        
         opacity: animatedOpacity,
       }}
       transition={{
@@ -34,8 +36,9 @@ const LinkItem = ({
       mx-1 hover:bg-slate-800
       rounded-lg text-[#03C988] text-sm underline-offset-0 my-4
       font-light cursor-pointer capitalize "
-    >
+      >
       {title}
+
     </motion.li>
   );
 };

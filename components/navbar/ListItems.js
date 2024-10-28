@@ -3,15 +3,25 @@ import LinkItem from "./LinkItem";
 import Link from "next/link";
 
 const titles = ["about", "skills", "works", "contact"];
-const ListItems = ({ setShow }) => {
+const ListItems = () => {
   return (
     <ul className="w-full h-fit  px-4  md:w-fit ">
-      <LinkItem>
-        <Link href="/">home</Link>
-      </LinkItem>
+      <Link href="/">
+      
+      <LinkItem 
+      title="Home"
+      />
+      </Link>
+        
 
       {titles.map((item, index) => {
+        
         return (
+          <Link
+          href={item}
+          >
+          
+          
           <LinkItem
             title={item}
             key={index}
@@ -23,7 +33,8 @@ const ListItems = ({ setShow }) => {
             animatedOpacity="1"
             duration="1"
             delay={`0.${index}`}
-          />
+            />
+            </Link>
         );
       })}
     </ul>
