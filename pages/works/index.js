@@ -1,21 +1,20 @@
 "use client";
 import ProjectBox from "@/components/works/ProjectBox";
 import Image from "next/image";
-import demoOne from "../../public/demoOne.jpg";
-import demoTwo from "../../public/demoTwo.png";
-import demoThree from "../../public/demoThree.gif";
-//import SectionTitle from "@/components/SecgtionTitle";
+import  homeImg from "@/public/homepage.png"
+import babyImg from "@/public/babyblog.png"
+import mobileImg from "@/public/mobileapp.png"
 const Works = () => {
   return (
     <>
       
       <section
-        className="w-screen md:max-w-[1534px] min-h-screen   bg-slate-100 gap-4
-      mx-auto border flex flex-col  md:flex-row  justify-between  items-center px-auto  "
+        className="w-screen md:max-w-[1534px] min-h-screen   bg-white gap-4
+      mx-auto border flex flex-col    justify-between  items-center px-auto  "
       >
         <ProjectBox >
           <Image
-            src={demoOne}
+            src={homeImg}
             alt="imageSrc"
             className="w-full overflow-hidden"
           />
@@ -23,14 +22,14 @@ const Works = () => {
 
         <ProjectBox left={0}>
           <Image
-            src={demoTwo}
+            src={babyImg}
             alt="imageSrc"
             className="w-full overflow-hidden"
           />
         </ProjectBox>
         <ProjectBox left={-500}>
           <Image
-            src={demoThree}
+            src={mobileImg}
             alt="imageSrc"
             className="w-full overflow-hidden"
           />

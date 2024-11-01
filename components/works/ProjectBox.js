@@ -15,7 +15,7 @@ return (
         duration:0.4,
         delay:0.4
     }}
-    className='w-screen  md:w-[30%] h-auto  border border-white rounded-md ' 
+    className='w-screen  md:max-w-[1080px] h-auto  border border-gray-200 overflow-hidden  rounded-md p-8  ' 
     > 
     
     {children}
