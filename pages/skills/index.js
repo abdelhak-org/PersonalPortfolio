@@ -13,7 +13,26 @@ const Skills = () => {
       
         
         <>
-        <section className=" w-screen md:max-w-[1534px] min-h-screen    py-24 flex-col md:flex-row flex mx-auto  justify-center items-center overflow-hidden ">
+        <section 
+          className="w-screen md:max-w-[1534px] min-h-screen md:flex-rows
+          bg-white gap-4 md:px-8
+          mx-auto border flex flex-col  justify-between py-8
+          items-center px-auto  "
+        
+        >
+       
+          <h2
+          className="w-fit mx-auto font-bolder
+           text-4xl font-serif mb-8 underline underline-offset-4  "
+          >
+          Skills  
+          
+           </h2>
+        
+       <div
+       className="w-full py-12 flex justify-center items-center gap-4  flex-col md:flex-row "
+       >
+ 
         <Card
           keyId="1"
           y="0px"
@@ -52,7 +71,7 @@ const Skills = () => {
             src={reactImg}
             alt="NextImg"
             className="mb-8 mt-4 h-50 rounded-full "
-          />
+            />
           <h3
             style={{ fontFamily: oswald.style.fontFamily }}
             className="text-center font-extralight text-2xl "
@@ -79,10 +98,11 @@ const Skills = () => {
           <h3
             style={{ fontFamily: oswald.style.fontFamily }}
             className="text-center font-extralight text-2xl   "
-          >
+            >
             Tailwindcss
           </h3>
         </Card>
+            </div>
       </section>
       <section className=" max-w-[1534px] bg-[#333]  h-fit  py-8 my-4 flex-col md:flex-row flex mx-auto 
       justify-center items-center  overflow-hidden">

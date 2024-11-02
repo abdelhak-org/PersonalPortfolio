@@ -9,9 +9,22 @@ const Works = () => {
     <>
       
       <section
-        className="w-screen md:max-w-[1534px] min-h-screen   bg-white gap-4
-      mx-auto border flex flex-col    justify-between  items-center px-auto  "
+        className="w-screen md:max-w-[1534px] min-h-screen 
+          bg-white gap-4 px-8
+          mx-auto border flex flex-col  justify-between py-8
+          items-center px-auto  "
       >
+        <div
+        className=""
+        >
+          <h2
+          className="w-fit mx-auto font-bolder
+           text-4xl font-serif mb-8 underline underline-offset-4  "
+          >
+             Projects 
+          
+           </h2>
+        </div>
         <ProjectBox >
           <Image
             src={homeImg}

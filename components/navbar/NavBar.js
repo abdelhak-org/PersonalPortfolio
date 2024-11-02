@@ -14,7 +14,7 @@ import Logo from "./Logo";
       <div
         onClick={() => setShow(!show)}
         className="  md:hidden my-2 mx-auto text-center text-3xl p-4 text-white
-         bg-slate-900 cursor-pointer fixed top-4 right-4 z-50 "
+         bg-slate-700 cursor-pointer fixed top-4 right-4 z-50 "
       >
         {!show ? <AiOutlineMenu /> : <AiOutlineClose />}
       </div>
