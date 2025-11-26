@@ -1,6 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Website - MERN Stack Developer
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui components.
+
+## 🚀 Features
+
+- **Modern Design**: Clean and professional design with smooth animations
+- **Fully Responsive**: Optimized for all devices (mobile, tablet, desktop)
+- **Dark Mode Ready**: Built with shadcn/ui theming system
+- **SEO Optimized**: Proper meta tags and semantic HTML
+- **Fast Performance**: Built with Next.js 14 App Router
+- **Type Safe**: Written in TypeScript for better code quality
+- **Smooth Scrolling**: Beautiful navigation with smooth scroll behavior
+
+## 📋 Sections
+
+1. **Hero Section**: Eye-catching introduction with CTA buttons
+2. **About Section**: Professional background and expertise highlights
+3. **Skills Section**: Comprehensive list of technical skills organized by category
+4. **Projects Section**: Showcase of featured projects with descriptions and links
+5. **Contact Section**: Contact form and information for reaching out
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
+- **Deployment**: Ready for Vercel, Netlify, or any hosting platform
+
+## 🏃 Getting Started
 
 First, run the development server:
 
@@ -8,31 +37,63 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 🎨 Customization
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Personal Information
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Update the following files with your information:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Hero Section** (`components/Hero.tsx`):
+   - Update your name
+   - Modify the introduction text
+   - Change social media links
 
-## Learn More
+2. **About Section** (`components/About.tsx`):
+   - Update your bio and description
+   - Modify the statistics (years of experience, projects, clients)
 
-To learn more about Next.js, take a look at the following resources:
+3. **Skills Section** (`components/Skills.tsx`):
+   - Add or remove skills
+   - Adjust skill levels (Advanced/Intermediate)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Projects Section** (`components/Projects.tsx`):
+   - Replace with your actual projects
+   - Add project descriptions
+   - Update GitHub and demo links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. **Contact Section** (`components/Contact.tsx`):
+   - Update your email, phone, and location
+   - Modify social media links
 
-## Deploy on Vercel
+6. **Footer** (`components/Footer.tsx`):
+   - Update social media links
+   - Add your name and copyright
+
+## 📦 Build for Production
+
+```bash
+npm run build
+```
+
+## 🚀 Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 📝 Learn More
+
+To learn more about the technologies used:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [shadcn/ui](https://ui.shadcn.com)
+- [TypeScript](https://www.typescriptlang.org/docs)
+
+---
+
+Made with ❤️ using Next.js, TypeScript, Tailwind CSS, and shadcn/ui
