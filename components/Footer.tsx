@@ -5,22 +5,22 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
+    { icon: Github, href: "https://github.com/abdelhak-org", label: "GitHub" },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://linkedin.com/in/boussafer-abdelhak",
       label: "LinkedIn",
     },
     {
       icon: Twitter,
-      href: "https://twitter.com/yourusername",
+      href: "https://twitter.com/abdelhak_dev",
       label: "Twitter",
     },
-    { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+    { icon: Mail, href: "mailto:abdelhak.org@gmail.com", label: "Email" },
   ];
 
   return (
-    <footer className="bg-muted/30 border-t mt-20 bg-gray-100/50">
+    <footer className="bg-muted/30 border-t mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-          <p>&copy; {currentYear} Your Name. All rights reserved.</p>
+          <p>&copy; {currentYear} abdelTech . All rights reserved.</p>
         </div>
       </div>
     </footer>

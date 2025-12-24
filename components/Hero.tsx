@@ -100,10 +100,10 @@ export default function Hero() {
                 variant="outline"
                 className="text-lg px-8"
               >
-                <Link href="#contact">
+                <a href="/resume.pdf" download="Boussafer_Abdelhak_CV.pdf">
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
@@ -116,18 +116,20 @@ export default function Hero() {
           >
             <div className="flex gap-6 justify-center mt-12">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/abdelhak-org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Visit my GitHub profile"
               >
                 <Github className="h-8 w-8" />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/boussafer-abdelhak"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Connect with me on LinkedIn"
               >
                 <Linkedin className="h-8 w-8" />
               </a>
@@ -141,6 +143,7 @@ export default function Hero() {
         className={` absolute bottom-10 left-1/2 transform -translate-x-1/2 transition-all duration-700 delay-1000 ${
           mounted ? "opacity-100" : "opacity-0"
         }`}
+        aria-hidden="true"
       >
         <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-bounce"></div>

@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ExternalLink, Github } from "lucide-react";
+import ProjectImage from "@/components/ProjectImage";
 
 export default function Projects() {
   const projects = [
@@ -18,60 +19,66 @@ export default function Projects() {
       title: "E-Commerce Platform",
       description:
         "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with the MERN stack for optimal performance.",
-      image: "🛍️",
+      image: "/projects/ecommerce.png",
+      fallbackEmoji: "🛍️",
       tags: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-      github: "https://github.com/yourusername/project1",
-      demo: "https://project1-demo.com",
+      github: "https://github.com/abdelhak-org/ecommerce-platform",
+      demo: "#",
       highlights: ["Payment Integration", "Admin Panel", "Real-time Updates"],
     },
     {
       title: "Social Media App",
       description:
         "A real-time social networking platform with posts, comments, likes, and direct messaging. Features JWT authentication and Socket.io for live updates.",
-      image: "💬",
+      image: "/projects/social-media.png",
+      fallbackEmoji: "💬",
       tags: ["Next.js", "Express", "MongoDB", "Socket.io", "JWT"],
-      github: "https://github.com/yourusername/project2",
-      demo: "https://project2-demo.com",
+      github: "https://github.com/abdelhak-org/social-media-app",
+      demo: "#",
       highlights: ["Real-time Chat", "Social Features", "Responsive Design"],
     },
     {
       title: "Task Management System",
       description:
         "Collaborative project management tool with drag-and-drop interface, team collaboration features, and detailed analytics dashboard.",
-      image: "📋",
+      image: "/projects/task-manager.png",
+      fallbackEmoji: "📋",
       tags: ["React", "Node.js", "PostgreSQL", "TypeScript", "Tailwind"],
-      github: "https://github.com/yourusername/project3",
-      demo: "https://project3-demo.com",
+      github: "https://github.com/abdelhak-org/task-manager",
+      demo: "#",
       highlights: ["Drag & Drop", "Team Collaboration", "Analytics"],
     },
     {
       title: "Weather Dashboard",
       description:
         "Modern weather application with location-based forecasts, interactive maps, and weather alerts. Integrates multiple weather APIs for accurate data.",
-      image: "🌤️",
+      image: "/projects/weather.png",
+      fallbackEmoji: "🌤️",
       tags: ["Next.js", "TypeScript", "REST API", "Charts", "Geolocation"],
-      github: "https://github.com/yourusername/project4",
-      demo: "https://project4-demo.com",
+      github: "https://github.com/abdelhak-org/weather-dashboard",
+      demo: "#",
       highlights: ["API Integration", "Interactive Maps", "PWA"],
     },
     {
       title: "Blog Platform",
       description:
         "A modern blogging platform with markdown support, SEO optimization, and content management. Features include categories, tags, and search functionality.",
-      image: "✍️",
+      image: "/projects/blog.png",
+      fallbackEmoji: "✍️",
       tags: ["Next.js", "MongoDB", "MDX", "SEO", "shadcn/ui"],
-      github: "https://github.com/yourusername/project5",
-      demo: "https://project5-demo.com",
+      github: "https://github.com/abdelhak-org/blog-platform",
+      demo: "#",
       highlights: ["SEO Optimized", "Markdown Support", "Fast Performance"],
     },
     {
       title: "Fitness Tracker",
       description:
         "Comprehensive fitness tracking application with workout plans, progress tracking, and nutrition monitoring. Includes data visualization and goal setting.",
-      image: "💪",
+      image: "/projects/fitness.png",
+      fallbackEmoji: "💪",
       tags: ["React", "Express", "MongoDB", "Charts.js", "Redux"],
-      github: "https://github.com/yourusername/project6",
-      demo: "https://project6-demo.com",
+      github: "https://github.com/abdelhak-org/fitness-tracker",
+      demo: "#",
       highlights: ["Progress Tracking", "Data Visualization", "Goal Setting"],
     },
   ];
@@ -94,11 +101,15 @@ export default function Projects() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="border-2 hover:border-primary/50 transition-all flex flex-col"
+              className="border-2 hover:border-primary/50 transition-all flex flex-col overflow-hidden"
             >
+              {/* Project Image */}
+              <ProjectImage
+                src={project.image}
+                alt={project.title}
+                fallbackEmoji={project.fallbackEmoji}
+              />
               <CardHeader>
-                {/* Project Icon */}
-                <div className="text-6xl mb-4 text-center">{project.image}</div>
                 <CardTitle className="text-xl">{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>

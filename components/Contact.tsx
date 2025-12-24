@@ -4,7 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 import { useState } from "react";
 
 export default function Contact() {
@@ -18,17 +25,38 @@ export default function Contact() {
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+    setErrorMessage("");
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
       setStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1000);
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "Failed to send message"
+      );
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   const handleChange = (
@@ -57,7 +85,7 @@ export default function Contact() {
       icon: MapPin,
       title: "Location",
       content: "Wuppertal, Germany",
-      link: "www.abdelhak.com",
+      link: "https://maps.google.com/?q=Wuppertal,Germany",
     },
   ];
 
@@ -122,12 +150,12 @@ export default function Contact() {
               <h4 className="font-semibold mb-4">Follow Me</h4>
               <div className="flex gap-4">
                 {[
-                  { name: "GitHub", url: "https://github.com/yourusername" },
+                  { name: "GitHub", url: "https://github.com/abdelhak-org" },
                   {
                     name: "LinkedIn",
-                    url: "https://linkedin.com/in/yourusername",
+                    url: "https://linkedin.com/in/boussafer-abdelhak",
                   },
-                  { name: "Twitter", url: "https://twitter.com/yourusername" },
+                  { name: "Twitter", url: "https://twitter.com/abdelhak_dev" },
                 ].map((social) => (
                   <a
                     key={social.name}
@@ -135,6 +163,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 border-2 rounded-lg hover:border-primary hover:text-primary transition-colors"
+                    aria-label={`Follow me on ${social.name}`}
                   >
                     {social.name}
                   </a>
@@ -146,6 +175,22 @@ export default function Contact() {
           {/* Contact Form */}
           <Card className="border-2">
             <CardContent className="p-6">
+              {/* Status Messages */}
+              {status === "success" && (
+                <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-500" />
+                  <p className="text-green-500">
+                    Thank you! Your message has been sent successfully.
+                  </p>
+                </div>
+              )}
+              {status === "error" && (
+                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center gap-3">
+                  <AlertCircle className="h-5 w-5 text-red-500" />
+                  <p className="text-red-500">{errorMessage}</p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label

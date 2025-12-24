@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Code2, Database, Globe, Server } from "lucide-react";
+import ProfileImage from "@/components/ProfileImage";
 
 export default function About() {
   const highlights = [
@@ -83,12 +84,14 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column - Image Placeholder */}
+          {/* Right Column - Profile Image */}
           <div className="flex justify-center">
             <div className="relative">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
-                <Code2 className="w-32 h-32 text-primary/40" />
-              </div>
+              <ProfileImage
+                src="/profile.jpg"
+                alt="Boussafer Abdelhak - Full Stack Developer"
+                size="lg"
+              />
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>

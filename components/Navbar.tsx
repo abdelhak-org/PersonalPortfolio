@@ -38,8 +38,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold">
-            <span className="text-primary">{"<Abdel."}</span>
-            <span className="text-muted-foreground">{"/>"}</span>
+            <span className="text-primary">{"Abdel."}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -65,6 +64,8 @@ export default function Navbar() {
             <button
               className="md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -77,7 +78,10 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-4">
+          <nav
+            className="md:hidden py-4 space-y-4"
+            aria-label="Mobile navigation"
+          >
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -93,7 +97,7 @@ export default function Navbar() {
                 Get in Touch
               </Link>
             </Button>
-          </div>
+          </nav>
         )}
       </div>
     </nav>
