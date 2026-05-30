@@ -5,7 +5,7 @@ import { useState } from "react";
 import { User } from "lucide-react";
 
 interface ProfileImageProps {
-  src?: string;
+  src?: string | null;
   alt: string;
   size?: "sm" | "md" | "lg";
   className?: string;
@@ -34,16 +34,16 @@ export default function ProfileImage({
   if (!src || imageError) {
     return (
       <div
-        className={`${sizeClasses[size]} bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center ${className}`}
+        className={`${sizeClasses[size]} flex items-center justify-center rounded-[2rem] border border-border/70 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.3),transparent_32%),radial-gradient(circle_at_75%_70%,hsl(var(--accent)/0.18),transparent_34%),linear-gradient(135deg,hsl(var(--card)),hsl(var(--secondary)))] shadow-[0_30px_100px_-55px_hsl(var(--primary))] ${className}`}
       >
-        <User className={`${iconSizes[size]} text-primary/40`} />
+        <User className={`${iconSizes[size]} text-primary/70`} />
       </div>
     );
   }
 
   return (
     <div
-      className={`${sizeClasses[size]} relative rounded-2xl overflow-hidden ${className}`}
+      className={`${sizeClasses[size]} relative overflow-hidden rounded-[2rem] border border-border/70 shadow-[0_30px_100px_-55px_hsl(var(--primary))] ${className}`}
     >
       <Image
         src={src}

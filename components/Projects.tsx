@@ -1,5 +1,3 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,98 +8,118 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ExternalLink, Github } from "lucide-react";
+import { CheckCircle2, ExternalLink, Github } from "lucide-react";
 import ProjectImage from "@/components/ProjectImage";
+import { profile } from "@/data/profile";
+import { projects } from "@/data/projects";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description:
-        "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with the MERN stack for optimal performance.",
-      image: "/projects/ecommerce.png",
-      fallbackEmoji: "🛍️",
-      tags: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-      github: "https://github.com/abdelhak-org/ecommerce-platform",
-      demo: "#",
-      highlights: ["Payment Integration", "Admin Panel", "Real-time Updates"],
-    },
-    {
-      title: "Social Media App",
-      description:
-        "A real-time social networking platform with posts, comments, likes, and direct messaging. Features JWT authentication and Socket.io for live updates.",
-      image: "/projects/social-media.png",
-      fallbackEmoji: "💬",
-      tags: ["Next.js", "Express", "MongoDB", "Socket.io", "JWT"],
-      github: "https://github.com/abdelhak-org/social-media-app",
-      demo: "#",
-      highlights: ["Real-time Chat", "Social Features", "Responsive Design"],
-    },
-    {
-      title: "Task Management System",
-      description:
-        "Collaborative project management tool with drag-and-drop interface, team collaboration features, and detailed analytics dashboard.",
-      image: "/projects/task-manager.png",
-      fallbackEmoji: "📋",
-      tags: ["React", "Node.js", "PostgreSQL", "TypeScript", "Tailwind"],
-      github: "https://github.com/abdelhak-org/task-manager",
-      demo: "#",
-      highlights: ["Drag & Drop", "Team Collaboration", "Analytics"],
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "Modern weather application with location-based forecasts, interactive maps, and weather alerts. Integrates multiple weather APIs for accurate data.",
-      image: "/projects/weather.png",
-      fallbackEmoji: "🌤️",
-      tags: ["Next.js", "TypeScript", "REST API", "Charts", "Geolocation"],
-      github: "https://github.com/abdelhak-org/weather-dashboard",
-      demo: "#",
-      highlights: ["API Integration", "Interactive Maps", "PWA"],
-    },
-    {
-      title: "Blog Platform",
-      description:
-        "A modern blogging platform with markdown support, SEO optimization, and content management. Features include categories, tags, and search functionality.",
-      image: "/projects/blog.png",
-      fallbackEmoji: "✍️",
-      tags: ["Next.js", "MongoDB", "MDX", "SEO", "shadcn/ui"],
-      github: "https://github.com/abdelhak-org/blog-platform",
-      demo: "#",
-      highlights: ["SEO Optimized", "Markdown Support", "Fast Performance"],
-    },
-    {
-      title: "Fitness Tracker",
-      description:
-        "Comprehensive fitness tracking application with workout plans, progress tracking, and nutrition monitoring. Includes data visualization and goal setting.",
-      image: "/projects/fitness.png",
-      fallbackEmoji: "💪",
-      tags: ["React", "Express", "MongoDB", "Charts.js", "Redux"],
-      github: "https://github.com/abdelhak-org/fitness-tracker",
-      demo: "#",
-      highlights: ["Progress Tracking", "Data Visualization", "Goal Setting"],
-    },
-  ];
+  const featuredProjects = projects.slice(0, 2);
+  const otherProjects = projects.slice(2);
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section id="projects" className="relative overflow-hidden py-28">
+      <div className="absolute inset-0 -z-10 bg-secondary/30"></div>
+      <div className="absolute left-0 top-20 -z-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl"></div>
+      <div className="absolute bottom-20 right-0 -z-10 h-72 w-72 rounded-full bg-accent/10 blur-3xl"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Featured <span className="text-primary">Projects</span>
+          <p className="section-eyebrow">Selected work</p>
+          <h2 className="section-title mb-4">
+            Projects that show product thinking and execution.
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my recent work and personal projects
+            A focused collection of full-stack applications with clean UI,
+            practical architecture, and measurable user value.
           </p>
+        </div>
+
+        {/* Featured Projects */}
+        <div className="mb-8 grid gap-6">
+          {featuredProjects.map((project, index) => (
+            <Card
+              key={project.title}
+              className="group grid overflow-hidden transition-all hover:-translate-y-1 hover:border-primary/50 lg:grid-cols-[0.95fr_1.05fr]"
+            >
+              <ProjectImage
+                src={project.image}
+                alt={project.title}
+                fallbackEmoji={project.fallbackEmoji}
+                className="h-64 border-b lg:h-full lg:min-h-[360px] lg:border-b-0 lg:border-r"
+              />
+              <div className="flex flex-col">
+                <CardHeader className="p-7">
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <Badge variant="secondary" className="bg-primary/10 text-primary">
+                      Featured case study 0{index + 1}
+                    </Badge>
+                    <span className="text-sm font-semibold text-muted-foreground">
+                      Full-stack build
+                    </span>
+                  </div>
+                  <CardTitle className="text-3xl font-black tracking-tight">
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="mt-3 text-base leading-7">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow px-7">
+                  <div className="mb-6 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="outline" className="bg-background/50">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {project.highlights.map((highlight) => (
+                      <div
+                        key={highlight}
+                        className="rounded-2xl border border-border/70 bg-background/45 p-4 text-sm font-semibold text-muted-foreground"
+                      >
+                        <CheckCircle2 className="mb-3 h-5 w-5 text-accent" />
+                        {highlight}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="gap-3 p-7 pt-2">
+                  <Button asChild variant="outline" className="flex-1">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="mr-2 h-4 w-4" />
+                      Code
+                    </a>
+                  </Button>
+                  {project.demoUrl && (
+                    <Button asChild className="flex-1">
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Demo
+                      </a>
+                    </Button>
+                  )}
+                </CardFooter>
+              </div>
+            </Card>
+          ))}
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {otherProjects.map((project) => (
             <Card
-              key={index}
-              className="border-2 hover:border-primary/50 transition-all flex flex-col overflow-hidden"
+              key={project.title}
+              className="group flex flex-col overflow-hidden transition-all hover:-translate-y-2 hover:border-primary/50"
             >
               {/* Project Image */}
               <ProjectImage
@@ -110,26 +128,34 @@ export default function Projects() {
                 fallbackEmoji={project.fallbackEmoji}
               />
               <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
+                <CardTitle className="text-2xl font-black tracking-tight">
+                  {project.title}
+                </CardTitle>
+                <CardDescription className="leading-6">
+                  {project.description}
+                </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="secondary">
+                  {project.tags.map((tag) => (
+                    <Badge
+                      key={tag}
+                      variant="secondary"
+                      className="bg-secondary/80"
+                    >
                       {tag}
                     </Badge>
                   ))}
                 </div>
                 {/* Highlights */}
                 <div className="space-y-1">
-                  {project.highlights.map((highlight, highlightIndex) => (
+                  {project.highlights.map((highlight) => (
                     <div
-                      key={highlightIndex}
+                      key={highlight}
                       className="flex items-center text-sm text-muted-foreground"
                     >
-                      <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2 shadow-[0_0_18px_hsl(var(--primary))]"></span>
                       {highlight}
                     </div>
                   ))}
@@ -138,7 +164,7 @@ export default function Projects() {
               <CardFooter className="flex gap-2">
                 <Button asChild variant="outline" className="flex-1">
                   <a
-                    href={project.github}
+                    href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -146,16 +172,18 @@ export default function Projects() {
                     Code
                   </a>
                 </Button>
-                <Button asChild className="flex-1">
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </a>
-                </Button>
+                {project.demoUrl && (
+                  <Button asChild className="flex-1">
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Demo
+                    </a>
+                  </Button>
+                )}
               </CardFooter>
             </Card>
           ))}
@@ -165,7 +193,7 @@ export default function Projects() {
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" asChild>
             <a
-              href="https://github.com/yourusername"
+              href={profile.socialLinks[0].url}
               target="_blank"
               rel="noopener noreferrer"
             >

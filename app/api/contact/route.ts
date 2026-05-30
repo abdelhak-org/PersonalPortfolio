@@ -3,10 +3,19 @@ import { NextRequest, NextResponse } from "next/server";
 // Email validation regex
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+function escapeHtml(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, subject, message } = body;
+    const { name, email, subject, message } = body as Record<string, string>;
 
     // Validation
     if (!name || name.trim().length < 2) {
@@ -37,29 +46,56 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Here you would typically:
-    // 1. Send an email using a service like Resend, SendGrid, or Nodemailer
-    // 2. Store the message in a database
-    // 3. Send a notification to yourself
+    const apiKey = process.env.RESEND_API_KEY;
+    const toEmail = process.env.CONTACT_EMAIL;
+    const fromEmail =
+      process.env.CONTACT_FROM ?? "Portfolio Contact <onboarding@resend.dev>";
 
-    // Example with Resend (uncomment and install @resend/node):
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: 'onboarding@resend.dev',
-    //   to: 'abdelhak.org@gmail.com',
-    //   subject: `Portfolio Contact: ${subject}`,
-    //   html: `
-    //     <h2>New Contact Form Submission</h2>
-    //     <p><strong>Name:</strong> ${name}</p>
-    //     <p><strong>Email:</strong> ${email}</p>
-    //     <p><strong>Subject:</strong> ${subject}</p>
-    //     <p><strong>Message:</strong></p>
-    //     <p>${message}</p>
-    //   `,
-    // });
+    if (!apiKey || !toEmail) {
+      return NextResponse.json(
+        { error: "Contact form is not configured yet." },
+        { status: 500 }
+      );
+    }
 
-    // For now, we'll just log the message and return success
-    console.log("Contact form submission:", { name, email, subject, message });
+    const safeName = escapeHtml(name.trim());
+    const safeEmail = escapeHtml(email.trim());
+    const safeSubject = escapeHtml(subject.trim());
+    const safeMessage = escapeHtml(message.trim()).replaceAll("\n", "<br />");
+
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: fromEmail,
+        to: [toEmail],
+        reply_to: email.trim(),
+        subject: `Portfolio Contact: ${subject.trim()}`,
+        text: `Name: ${name.trim()}\nEmail: ${email.trim()}\nSubject: ${subject.trim()}\n\n${message.trim()}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
+            <h2>New portfolio contact message</h2>
+            <p><strong>Name:</strong> ${safeName}</p>
+            <p><strong>Email:</strong> ${safeEmail}</p>
+            <p><strong>Subject:</strong> ${safeSubject}</p>
+            <p><strong>Message:</strong></p>
+            <p>${safeMessage}</p>
+          </div>
+        `,
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => null);
+      console.error("Resend email error:", error);
+      return NextResponse.json(
+        { error: "Failed to send message. Please try again later." },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json(
       {
