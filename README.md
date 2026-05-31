@@ -79,6 +79,18 @@ Update the following files with your information:
 npm run build
 ```
 
+## Contact Form Configuration
+
+The contact form uses the `/api/contact` server route and Resend. Configure these environment variables in production:
+
+```env
+RESEND_API_KEY=re_your_api_key_here
+CONTACT_EMAIL=abdelhak.org@gmail.com
+CONTACT_FROM="Portfolio Contact <onboarding@resend.dev>"
+```
+
+Use a verified Resend sender/domain for `CONTACT_FROM` in production.
+
 ## 🚀 Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { profile } from "@/data/profile";
+
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
 // Email validation regex
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -16,30 +20,34 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { name, email, subject, message } = body as Record<string, string>;
+    const trimmedName = name?.trim();
+    const trimmedEmail = email?.trim();
+    const trimmedSubject = subject?.trim();
+    const trimmedMessage = message?.trim();
 
     // Validation
-    if (!name || name.trim().length < 2) {
+    if (!trimmedName || trimmedName.length < 2) {
       return NextResponse.json(
         { error: "Name must be at least 2 characters" },
         { status: 400 }
       );
     }
 
-    if (!email || !emailRegex.test(email)) {
+    if (!trimmedEmail || !emailRegex.test(trimmedEmail)) {
       return NextResponse.json(
         { error: "Please provide a valid email address" },
         { status: 400 }
       );
     }
 
-    if (!subject || subject.trim().length < 3) {
+    if (!trimmedSubject || trimmedSubject.length < 3) {
       return NextResponse.json(
         { error: "Subject must be at least 3 characters" },
         { status: 400 }
       );
     }
 
-    if (!message || message.trim().length < 10) {
+    if (!trimmedMessage || trimmedMessage.length < 10) {
       return NextResponse.json(
         { error: "Message must be at least 10 characters" },
         { status: 400 }
@@ -47,21 +55,22 @@ export async function POST(request: NextRequest) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.CONTACT_EMAIL;
+    const toEmail = process.env.CONTACT_EMAIL ?? profile.email;
     const fromEmail =
       process.env.CONTACT_FROM ?? "Portfolio Contact <onboarding@resend.dev>";
 
-    if (!apiKey || !toEmail) {
+    if (!apiKey) {
+      console.error("Contact form configuration error: RESEND_API_KEY is missing");
       return NextResponse.json(
         { error: "Contact form is not configured yet." },
         { status: 500 }
       );
     }
 
-    const safeName = escapeHtml(name.trim());
-    const safeEmail = escapeHtml(email.trim());
-    const safeSubject = escapeHtml(subject.trim());
-    const safeMessage = escapeHtml(message.trim()).replaceAll("\n", "<br />");
+    const safeName = escapeHtml(trimmedName);
+    const safeEmail = escapeHtml(trimmedEmail);
+    const safeSubject = escapeHtml(trimmedSubject);
+    const safeMessage = escapeHtml(trimmedMessage).replaceAll("\n", "<br />");
 
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -72,9 +81,9 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         from: fromEmail,
         to: [toEmail],
-        reply_to: email.trim(),
-        subject: `Portfolio Contact: ${subject.trim()}`,
-        text: `Name: ${name.trim()}\nEmail: ${email.trim()}\nSubject: ${subject.trim()}\n\n${message.trim()}`,
+        reply_to: trimmedEmail,
+        subject: `Portfolio Contact: ${trimmedSubject}`,
+        text: `Name: ${trimmedName}\nEmail: ${trimmedEmail}\nSubject: ${trimmedSubject}\n\n${trimmedMessage}`,
         html: `
           <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
             <h2>New portfolio contact message</h2>
@@ -89,8 +98,8 @@ export async function POST(request: NextRequest) {
     });
 
     if (!response.ok) {
-      const error = await response.json().catch(() => null);
-      console.error("Resend email error:", error);
+      const error = await response.text().catch(() => "");
+      console.error("Resend email error:", response.status, error);
       return NextResponse.json(
         { error: "Failed to send message. Please try again later." },
         { status: 502 }

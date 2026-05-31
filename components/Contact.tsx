@@ -46,15 +46,23 @@ export default function Contact() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
+        cache: "no-store",
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      const contentType = response.headers.get("content-type") ?? "";
+      const data = contentType.includes("application/json")
+        ? ((await response.json().catch(() => null)) as { error?: string } | null)
+        : null;
 
       if (!response.ok) {
-        throw new Error(data.error || "Something went wrong");
+        throw new Error(
+          data?.error ||
+            `Contact service is unavailable. Please email me directly at ${profile.email}.`
+        );
       }
 
       setStatus("success");

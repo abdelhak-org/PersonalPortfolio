@@ -211,7 +211,17 @@ For complete control, deploy to your own server.
 
 ## 🔒 Environment Variables
 
-If you add backend functionality, set environment variables on your platform:
+The contact form sends email through Resend from `app/api/contact/route.ts`. Set these runtime environment variables on your production platform:
+
+```env
+RESEND_API_KEY=re_your_api_key_here
+CONTACT_EMAIL=abdelhak.org@gmail.com
+CONTACT_FROM="Portfolio Contact <onboarding@resend.dev>"
+```
+
+`RESEND_API_KEY` is required. `CONTACT_EMAIL` defaults to the public portfolio email if omitted. For production, use a verified Resend sender/domain for `CONTACT_FROM`; the default Resend onboarding sender is only suitable for testing.
+
+Where to set them:
 
 ### Vercel:
 
@@ -224,13 +234,6 @@ If you add backend functionality, set environment variables on your platform:
 ### Railway:
 
 - Variables tab in your project
-
-Example `.env.local`:
-
-```env
-NEXT_PUBLIC_API_URL=your_api_url
-EMAIL_SERVICE_ID=your_email_service_id
-```
 
 **Important**: Never commit `.env.local` to git!
 
