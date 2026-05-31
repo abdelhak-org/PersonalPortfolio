@@ -29,6 +29,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Boussafer Abdelhak" }],
   creator: "Boussafer Abdelhak",
+  icons: {
+    icon: [{ url: "/favicon.png?v=2", sizes: "512x512", type: "image/png" }],
+    shortcut: ["/favicon.png?v=2"],
+    apple: [{ url: "/favicon.png?v=2", sizes: "512x512", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -58,9 +63,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png" />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

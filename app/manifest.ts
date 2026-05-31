@@ -6,13 +6,13 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "Abdelhak Portfolio",
     icons: [
       {
-        src: "/favicon.png",
-        sizes: "32x32",
+        src: "/favicon.png?v=2",
+        sizes: "512x512",
         type: "image/png",
       },
       {
-        src: "/favicon.png",
-        sizes: "16x16",
+        src: "/favicon.png?v=2",
+        sizes: "512x512",
         type: "image/png",
       },
     ],
