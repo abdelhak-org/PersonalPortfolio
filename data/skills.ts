@@ -23,7 +23,6 @@ export const skillCategories = [
       { name: "GraphQL", level: "Intermediate" },
       { name: "JWT Authentication", level: "Advanced" },
       { name: "Socket.io", level: "Intermediate" },
-      { name: "Microservices", level: "Intermediate" },
     ],
   },
   {
@@ -32,8 +31,6 @@ export const skillCategories = [
     skills: [
       { name: "MongoDB", level: "Advanced" },
       { name: "Mongoose", level: "Advanced" },
-      { name: "PostgreSQL", level: "Intermediate" },
-      { name: "Redis", level: "Intermediate" },
       { name: "Database Design", level: "Advanced" },
       { name: "Query Optimization", level: "Intermediate" },
     ],
@@ -44,12 +41,9 @@ export const skillCategories = [
     skills: [
       { name: "Git & GitHub", level: "Advanced" },
       { name: "Docker", level: "Intermediate" },
-      { name: "AWS/Vercel", level: "Intermediate" },
+      { name: "Vercel", level: "Intermediate" },
       { name: "CI/CD", level: "Intermediate" },
-      { name: "npm/yarn", level: "Advanced" },
-      { name: "Webpack/Vite", level: "Intermediate" },
       { name: "Jest/Testing Library", level: "Intermediate" },
-      { name: "Postman", level: "Advanced" },
     ],
   },
 ] as const;

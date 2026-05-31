@@ -7,7 +7,7 @@ export const profile = {
   phoneHref: "tel:+4917672267745",
   location: "Wuppertal, Germany",
   locationHref: "https://maps.google.com/?q=Wuppertal,Germany",
-  siteUrl: "https://abdelhak.dev",
+  siteUrl: "https://abdelhak.de",
   resumeUrl: null,
   resumeDownloadName: "Boussafer_Abdelhak_CV.pdf",
   profileImage: null,
