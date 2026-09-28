@@ -5,7 +5,6 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import SectionSeparator from "@/components/SectionSeparator";
 
 export default function Home() {
   return (
@@ -13,13 +12,9 @@ export default function Home() {
       <Navbar />
       <main id="main-content">
         <Hero />
-        <SectionSeparator />
-        <About />
-        <SectionSeparator />
-        <Skills />
-        <SectionSeparator />
         <Projects />
-        <SectionSeparator />
+        <About />
+        <Skills />
         <Contact />
       </main>
       <Footer />

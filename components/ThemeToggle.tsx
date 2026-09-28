@@ -12,12 +12,11 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      className="w-9 h-9"
-      aria-label="Toggle theme"
+      className="h-11 w-11 rounded-none border border-transparent"
+      aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} theme`}
     >
       <Sun className="hidden h-5 w-5 rotate-0 scale-100 transition-all dark:block" />
       <Moon className="h-5 w-5 rotate-0 scale-100 transition-all dark:hidden" />
-      <span className="sr-only">Toggle theme</span>
     </Button>
   );
 }

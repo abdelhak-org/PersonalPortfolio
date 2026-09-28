@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://abdelhak.de"),
   title: "Boussafer Abdelhak - Full Stack MERN Developer",
   description:
     "Full Stack MERN Developer specializing in building exceptional web applications with MongoDB, Express.js, React, and Node.js. Based in Wuppertal, Germany.",
@@ -29,6 +30,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Boussafer Abdelhak" }],
   creator: "Boussafer Abdelhak",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [{ url: "/favicon.png?v=2", sizes: "512x512", type: "image/png" }],
     shortcut: ["/favicon.png?v=2"],
@@ -37,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://abdelhak.dev",
+    url: "https://abdelhak.de",
     siteName: "Boussafer Abdelhak Portfolio",
     title: "Boussafer Abdelhak - Full Stack MERN Developer",
     description:
@@ -75,7 +79,7 @@ export default function RootLayout({
         </a>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >

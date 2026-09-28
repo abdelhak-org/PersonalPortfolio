@@ -1,85 +1,40 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { navItems } from "@/data/nav";
 import { profile } from "@/data/profile";
 
-const socialIcons = {
-  github: Github,
-  linkedin: Linkedin,
-  twitter: Twitter,
-} as const;
-
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="mt-20 border-t border-border/70 bg-secondary/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Brand */}
+    <footer className="border-t border-border bg-card">
+      <div className="page-shell py-10 sm:py-14">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
-            <Link href="/" className="mb-4 inline-flex items-center gap-3 text-2xl font-black">
-              <span className="grid h-10 w-10 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-sm text-primary">
-                AB
-              </span>
-              <span className="text-foreground">{profile.brandName}</span>
+            <Link href="#home" className="inline-flex items-center gap-3">
+              <span className="grid h-11 w-11 place-items-center bg-primary font-mono text-xs font-bold text-primary-foreground">AB</span>
+              <span className="text-xl font-semibold tracking-[-0.04em]">{profile.brandName}</span>
             </Link>
-            <p className="max-w-sm text-muted-foreground leading-7">
-              {profile.title} specializing in building exceptional digital
-              experiences.
+            <p className="mt-5 max-w-lg text-2xl font-semibold leading-tight tracking-[-0.035em] sm:text-3xl">
+              Thoughtful interfaces. Reliable engineering. Products ready for real users.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+          <div className="lg:justify-self-end">
+            <nav className="flex flex-wrap gap-x-6 gap-y-3" aria-label="Footer navigation">
               {navItems.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
+                <Link key={item.name} href={item.href} className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground hover:text-primary">
+                  {item.name}
+                </Link>
               ))}
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Connect With Me</h3>
-            <div className="flex space-x-4">
-              {profile.socialLinks.map((social) => {
-                const Icon = socialIcons[social.type];
-
-                return (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="grid h-10 w-10 place-items-center rounded-full border border-border/80 bg-card/60 text-muted-foreground transition hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary"
-                    aria-label={social.name}
-                  >
-                    <Icon className="h-6 w-6" />
-                  </a>
-                );
-              })}
-              <a
-                href={`mailto:${profile.email}`}
-                className="grid h-10 w-10 place-items-center rounded-full border border-border/80 bg-card/60 text-muted-foreground transition hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary"
-                aria-label="Email"
-              >
-                <Mail className="h-6 w-6" />
-              </a>
-            </div>
+            </nav>
+            <a href={`mailto:${profile.email}`} className="mt-7 inline-flex items-center gap-2 text-lg font-semibold underline decoration-primary decoration-2 underline-offset-8">
+              {profile.email} <ArrowUpRight className="h-5 w-5" />
+            </a>
           </div>
         </div>
 
-        <div className="border-t border-border/70 mt-8 pt-8 text-center text-muted-foreground">
-          <p>&copy; {currentYear} abdelTech . All rights reserved.</p>
+        <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; {new Date().getFullYear()} Boussafer Abdelhak</p>
+          <p>Designed and built in Wuppertal, Germany</p>
         </div>
       </div>
     </footer>

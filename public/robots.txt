@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abdelhak.dev/sitemap.xml
+Sitemap: https://abdelhak.de/sitemap.xml
